@@ -1,4 +1,4 @@
-const songs = (state = [], action) => {
+const reducer = (state = [], action) => {
   switch (action.type) {
     case "FETCH_SONGS_START": {
       return [];
@@ -19,4 +19,4 @@ const songs = (state = [], action) => {
   }
 };
 
-export default songs;
+export default reducer;
