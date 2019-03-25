@@ -5,7 +5,7 @@ class SearchingPage extends Component {
     return (
       <React.Fragment>
         <h2>Search on SearchingPage?</h2>
-        <input type="text" />
+        <input type="text"/>
       </React.Fragment>
     );
   }
