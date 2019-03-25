@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SearchingPage from "../redux/containers/SearchingPage";
 import Favorites from "../redux/containers/Favorites";

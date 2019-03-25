@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SearchingPage extends Component {
   render() {
     return (
       <React.Fragment>
-        <h2>Serach on SearchingPage?</h2>
-        <input type="text"/>
+        <h2>Search on SearchingPage?</h2>
+        <input type="text" />
       </React.Fragment>
     );
   }
