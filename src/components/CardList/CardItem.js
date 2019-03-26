@@ -38,9 +38,14 @@ const styles = theme => ({
 });
 
 class CardItem extends Component {
+  addToFavorite = () => {
+    const trackId = this.props.song.trackId
+    this.props.setLikeFavorites(trackId)
+  };
+
   render() {
-    const { classes } = this.props;
-    const isFavorite = false
+    const { classes, song } = this.props;
+    const currentFavoriteIconColor = this.props.song.isFavorite ?  "error" : "primary";
 
     return (
       <Grid item >
@@ -48,36 +53,36 @@ class CardItem extends Component {
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography component="h5" variant="h5">
-                Song Name
+                {song.trackName}
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
-                Artist name
+                {song.artistName}
               </Typography>
             </CardContent>
             <div className={classes.controls}>
               <IconButton aria-label="Play">
-                <PlayArrowIcon/>
+                <PlayArrowIcon color="primary"/>
               </IconButton>
-              <IconButton aria-label="Add-to-favorite">
-                <FavoriteIcon/>
+              <IconButton onClick={this.addToFavorite} aria-label="Add-to-favorite">
+                <FavoriteIcon color={currentFavoriteIconColor} />
               </IconButton>
 
-              {isFavorite
-                ? <Link href="#" target="_blank">
+              {song.isFavorite
+                ? <Link href={song.artistViewUrl} target="_blank">
                   <Typography className={classes.price} variant="subtitle1" color="textSecondary">
                     Look on iTunes
                   </Typography>
                 </Link>
                 : <Typography className={classes.price} variant="subtitle1" color="textSecondary">
-                    price: 12$
+                  {song.trackPrice}$
                   </Typography>
               }
             </div>
           </div>
           <CardMedia
             className={classes.cover}
-            image="https://images.pexels.com/photos/33597/guitar-classical-guitar-acoustic-guitar-electric-guitar.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            title="Live from space album cover"
+            image={song.artworkUrl}
+            title={song.collectionName}
           />
         </Card>
       </Grid>

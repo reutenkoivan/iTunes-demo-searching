@@ -9,6 +9,7 @@ import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import SwipeableTemporaryDrawer from "../Menu/SwipeableTemporaryDrawer"
+import {DebounceInput} from 'react-debounce-input';
 
 
 const styles = theme => ({
@@ -73,15 +74,14 @@ const styles = theme => ({
 
 class Menu extends Component {
   state = {
-    isOpen: false,
-    inputValue: ""
+    isOpen: false
   };
 
   searchingValue = e => {
     const linkParams = e.target.value.trim().split(/\s+/).join("+")
-    this.props.getSongs(linkParams)
-    this.setState({inputValue: linkParams})
-  }
+    if(linkParams)
+      this.props.getSongs(linkParams)
+  };
 
   toggleDrawer = open => () => {
     this.setState({
@@ -108,7 +108,10 @@ class Menu extends Component {
                 <div className={classes.searchIcon}>
                   <SearchIcon />
                 </div>
-                <InputBase
+                <DebounceInput
+                  element={InputBase}
+                  minLength={2}
+                  debounceTimeout={700}
                   onChange={this.searchingValue}
                   placeholder="Songs..."
                   classes={{

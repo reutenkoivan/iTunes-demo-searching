@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Favorite from "@material-ui/icons/Favorite"
+import HomeIcon from "@material-ui/icons/Home"
 
 const styles = {
   list: {
@@ -35,6 +36,12 @@ class SwipeableTemporaryDrawer extends React.Component {
           >
             <div className={classes.list}>
               <List>
+                <Link component={RouterLink} to="/">
+                  <ListItem button >
+                    <HomeIcon/>
+                    <ListItemText primary={"Home"} />
+                  </ListItem>
+                </Link>
                 <Link component={RouterLink} to="/favorites">
                   <ListItem button >
                     <Favorite />

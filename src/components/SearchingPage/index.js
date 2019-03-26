@@ -14,7 +14,7 @@ class SearchingPage extends Component {
             alignItems="center"
             xs={12}
             spacing={24}>
-            <CardList />
+            <CardList songs={this.props.songs}/>
           </Grid>
         </Grid>
       </React.Fragment>

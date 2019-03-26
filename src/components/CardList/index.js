@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import CardItem from "./CardItem" ;
+import CardItem from "../../redux/containers/CardItem" ;
 
 class CardList extends Component {
   render() {
     return (
       <React.Fragment>
-        <CardItem/>
+        {
+          this.props.songs.map(song =>(<CardItem key={song.trackId} song={song}/>))
+        }
       </React.Fragment>
     );
   }

@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
 import Favorites from "../../components/Favorites";
+import fetchFavoriteSongs from "../middlewares/fetchFavoriteSongs";
 
 const mapStateToProps = state => ({
-  // results: state.results,
+  songs: state.songs.filter(song => song.isFavorite)
 });
 
 const mapDispatchToProps = dispatch => ({
-  // getFavoritSongs: () => dispatch()
+  fetchFavoriteSongs: (str) => dispatch(fetchFavoriteSongs(str))
 });
 
 export default connect(
