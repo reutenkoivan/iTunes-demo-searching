@@ -1,16 +1,16 @@
 import { connect } from "react-redux";
-import SearchingPage from "../../components/SearchingPage";
+import Menu from "../../components/Menu";
 // import fetchSongs from "../middlewares/fetchSongs";
 
 const mapStateToProps = state => ({
-  // results: state.results,
+  results: state.results,
 });
 
 const mapDispatchToProps = dispatch => ({
-  // getSongs: () => dispatch(fetchSongs())
+  getSongs: (str) => dispatch(()=>{console.log(str)})
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchingPage);
+)(Menu);

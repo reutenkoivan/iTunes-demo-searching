@@ -4,6 +4,8 @@ import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import reducer from "./redux/reducer";
+import { themes } from "./themes";
+import { MuiThemeProvider } from "@material-ui/core";
 
 import Controller from "./components/Controller";
 
@@ -12,7 +14,9 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
+    <MuiThemeProvider theme={themes.main}>
     <Controller />
+    </MuiThemeProvider>
   </Provider>,
   document.getElementById("root")
 );
