@@ -11,7 +11,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import SwipeableTemporaryDrawer from "../Menu/SwipeableTemporaryDrawer"
 import {DebounceInput} from 'react-debounce-input';
 
-
 const styles = theme => ({
   root: {
     width: '100%'
@@ -78,7 +77,7 @@ class Menu extends Component {
   };
 
   searchingValue = e => {
-    const linkParams = e.target.value.trim().split(/\s+/).join("+")
+    const linkParams = e.target.value.trim().split(/\s+/).join("+");
     if(linkParams)
       this.props.getSongs(linkParams)
   };
@@ -101,7 +100,7 @@ class Menu extends Component {
                 <MenuIcon />
               </IconButton>
               <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                Searching songs
+                Страница поиска
               </Typography>
               <div className={classes.grow} />
               <div className={classes.search}>
@@ -113,7 +112,7 @@ class Menu extends Component {
                   minLength={2}
                   debounceTimeout={700}
                   onChange={this.searchingValue}
-                  placeholder="Songs..."
+                  placeholder="Какой трек ищете?"
                   classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,

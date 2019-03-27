@@ -6,6 +6,7 @@ import thunk from "redux-thunk";
 import reducer from "./redux/reducer";
 import { themes } from "./themes";
 import { MuiThemeProvider } from "@material-ui/core";
+import "./index.css"
 
 import Controller from "./components/Controller";
 

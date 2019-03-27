@@ -18,7 +18,8 @@ const styles = {
 
 class SwipeableTemporaryDrawer extends React.Component {
 
-  toggleDrawer = open => this.props.toggleDrawer(open)
+  toggleDrawer = open => this.props.toggleDrawer(open);
+
   render() {
     const { classes } = this.props;
 

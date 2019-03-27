@@ -3,7 +3,7 @@ import Menu from "../../components/Menu";
 import fetchSongs from "../middlewares/fetchSongs";
 
 const mapStateToProps = state => ({
-  results: state.results,
+  // results: state.results,
 });
 
 const mapDispatchToProps = dispatch => ({

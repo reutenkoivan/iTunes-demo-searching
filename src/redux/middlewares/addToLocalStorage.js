@@ -1,18 +1,18 @@
-import { setLikeFavorites } from "../actions";
+import { switchFavoritesState } from "../actions";
 
 const addToLocalStorage = id => dispatch => {
-  const prevIdes = localStorage.getItem("iTunseApp");
+  const prevIdes = localStorage.getItem("iTunesApp");
 
   if(prevIdes === null) {
-    localStorage.setItem("iTunseApp", id);
-    dispatch(setLikeFavorites(id))
+    localStorage.setItem("iTunesApp", id);
+    dispatch(switchFavoritesState(id))
   } else {
     const currentIdes = prevIdes + " " + id;
 
-    localStorage.removeItem("iTunseApp");
-    localStorage.setItem("iTunseApp", currentIdes);
+    localStorage.removeItem("iTunesApp");
+    localStorage.setItem("iTunesApp", currentIdes);
 
-    dispatch(setLikeFavorites(id))
+    dispatch(switchFavoritesState(id))
   }
 
 };

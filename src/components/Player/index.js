@@ -32,12 +32,11 @@ const styles = (theme) => ({
     alignItems: 'center',
     margin: '0 auto',
   }
-})
+});
 
 function Player(props) {
   const { classes } = props;
   return (
-    <React.Fragment>
       <AppBar color="primary" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div className={classes.songInfo}>
@@ -61,7 +60,6 @@ function Player(props) {
           </div>
         </Toolbar>
       </AppBar>
-    </React.Fragment>
   );
 }
 

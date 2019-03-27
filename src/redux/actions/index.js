@@ -1,7 +1,3 @@
-export const fetchSongsStart = () => ({
-  type: "FETCH_SONGS_START"
-});
-
 export const fetchSongsSuccess = data => ({
   data,
   type: "FETCH_SONGS_SUCCESS"
@@ -12,13 +8,9 @@ export const fetchSongsError = error => ({
   type: "FETCH_SONGS_ERROR"
 });
 
-export const setLikeFavorites = id => ({
+export const switchFavoritesState = id => ({
   id,
-  type: "SET_LIKE_FAVORITES"
-});
-
-export const fetchFavoriteSongsStart = () => ({
-  type: "FETCH_FAVORITESONGS_START"
+  type: "SWITCH_FAVORITES_STATE"
 });
 
 export const fetchFavoriteSongsSuccess = data => ({

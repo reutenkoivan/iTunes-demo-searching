@@ -1,13 +1,10 @@
-const addToFavorite = (state = false, action) => {
+const addToFavorite = (state = [], action) => {
   switch (action.type) {
-    case "ADD_TO_FAVORITE_START": {
-      return false;
-    }
     case "ADD_TO_FAVORITE_SUCCESS": {
-      return true
+      return []
     }
     case "ADD_TO_FAVORITE_ERROR": {
-      return false;
+      return action.error;
     }
     default: {
       return state;

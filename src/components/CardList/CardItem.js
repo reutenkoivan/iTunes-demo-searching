@@ -7,23 +7,25 @@ import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import Pause from "@material-ui/icons/PauseCircleFilled"
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Grid from "@material-ui/core/Grid";
 
 const styles = theme => ({
+
   card: {
-    display: 'flex',
+    display: 'flex'
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
-    width: 250
+    width: "100%"
   },
   content: {
     flex: '1 0 auto',
   },
   cover: {
-    width: 151,
+    width: 150,
   },
   controls: {
     display: 'flex',
@@ -38,18 +40,43 @@ const styles = theme => ({
 });
 
 class CardItem extends Component {
-  addToFavorite = () => {
-    const trackId = this.props.song.trackId
-    this.props.setLikeFavorites(trackId)
+
+  state = {
+    favoriteButtonColor: "primary",
+    soundState: false
+  };
+
+  audio = new Audio(this.props.song.previewUrl);
+
+  switchSoundState = () => {
+    if(!this.state.soundState){
+      this.setState({ soundState: true });
+      this.audio.play()
+    } else {
+      this.setState({ soundState: false });
+      this.audio.pause()
+    }
+  };
+
+  componentDidMount() {
+    if(this.props.song.isFavorite)
+    this.setState({favoriteButtonColor: "error"})
+  }
+
+  switchFavoriteState = () => {
+    const trackId = this.props.song.trackId;
+    this.props.switchFavoritesState(trackId);
+    this.props.song.isFavorite
+    ? this.setState({favoriteButtonColor: "error"})
+    : this.setState({favoriteButtonColor: "primary"})
   };
 
   render() {
     const { classes, song } = this.props;
-    const currentFavoriteIconColor = this.props.song.isFavorite ?  "error" : "primary";
 
     return (
-      <Grid item >
-        <Card className={classes.card}>
+      <Grid item xs={12}>
+        <Card className={classes.card} title={song.collectionName}>
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography component="h5" variant="h5">
@@ -60,11 +87,14 @@ class CardItem extends Component {
               </Typography>
             </CardContent>
             <div className={classes.controls}>
-              <IconButton aria-label="Play">
-                <PlayArrowIcon color="primary"/>
+              <IconButton onClick={this.switchSoundState} aria-label={this.state.soundState ? "Pause": "Play"}>
+                {this.state.soundState
+                  ? <Pause color="primary"/>
+                  : <PlayArrowIcon color="primary"/>
+                }
               </IconButton>
-              <IconButton onClick={this.addToFavorite} aria-label="Add-to-favorite">
-                <FavoriteIcon color={currentFavoriteIconColor} />
+              <IconButton onClick={this.switchFavoriteState} aria-label="Add-to-favorite">
+                <FavoriteIcon color={this.state.favoriteButtonColor} />
               </IconButton>
 
               {song.isFavorite
@@ -82,7 +112,6 @@ class CardItem extends Component {
           <CardMedia
             className={classes.cover}
             image={song.artworkUrl}
-            title={song.collectionName}
           />
         </Card>
       </Grid>
