@@ -75,9 +75,11 @@ class CardItem extends Component {
 
   switchFavoriteState = () => {
     this.props.switchFavoritesState(this.props.song);
-    this.props.song.isFavorite
-      ? this.setState({favoriteButtonColor: "error"})
-      : this.setState({favoriteButtonColor: "primary"})
+    this.setState(
+      this.state.favoriteButtonColor === "primary"
+        ? {favoriteButtonColor: "error"}
+        : {favoriteButtonColor: "primary"}
+    )
   };
 
   render() {
@@ -96,7 +98,7 @@ class CardItem extends Component {
               </Typography>
             </CardContent>
             <div className={classes.controls}>
-              <IconButton onClick={this.switchSoundState} aria-label={this.state.soundState ? "Pause": "Play"}>
+              <IconButton aria-label={this.state.soundState ? "Pause": "Play"}>
                 {this.state.soundState
                   ? <Pause color="primary"/>
                   : <PlayArrowIcon color="primary"/>
@@ -106,7 +108,7 @@ class CardItem extends Component {
                 <FavoriteIcon color={this.state.favoriteButtonColor} />
               </IconButton>
 
-              {song.isFavorite
+              {this.state.favoriteButtonColor === "error"
                 ? <Link href={song.artistViewUrl} target="_blank">
                   <Typography className={classes.price} variant="subtitle1" color="textSecondary">
                     Look on iTunes
