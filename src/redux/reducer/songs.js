@@ -29,7 +29,6 @@ const songs = (state = [], action) => {
         return song
       })]
     }
-
     default: {
       return state;
     }

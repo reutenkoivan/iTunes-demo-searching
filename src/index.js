@@ -8,7 +8,7 @@ import { themes } from "./themes";
 import { MuiThemeProvider } from "@material-ui/core";
 import "./index.css"
 
-import Controller from "./components/Controller";
+import Controller from "./redux/containers/Controller";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));

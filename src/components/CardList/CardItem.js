@@ -56,19 +56,28 @@ class CardItem extends Component {
       this.setState({ soundState: false });
       this.audio.pause()
     }
+
+    this.props.addSongToPlayer(this.props.song.previewUrl);
+
+    if(!this.state.soundState){
+      setInterval(()=>{
+        if(this.audio.ended) {
+          this.setState({ soundState: !this.audio.ended });
+          clearInterval()
+        }
+      },1000)} else clearInterval()
   };
 
   componentDidMount() {
     if(this.props.song.isFavorite)
-    this.setState({favoriteButtonColor: "error"})
+      this.setState({favoriteButtonColor: "error"})
   }
 
   switchFavoriteState = () => {
-    const trackId = this.props.song.trackId;
-    this.props.switchFavoritesState(trackId);
+    this.props.switchFavoritesState(this.props.song);
     this.props.song.isFavorite
-    ? this.setState({favoriteButtonColor: "error"})
-    : this.setState({favoriteButtonColor: "primary"})
+      ? this.setState({favoriteButtonColor: "error"})
+      : this.setState({favoriteButtonColor: "primary"})
   };
 
   render() {
@@ -105,7 +114,7 @@ class CardItem extends Component {
                 </Link>
                 : <Typography className={classes.price} variant="subtitle1" color="textSecondary">
                   {song.trackPrice}$
-                  </Typography>
+                </Typography>
               }
             </div>
           </div>

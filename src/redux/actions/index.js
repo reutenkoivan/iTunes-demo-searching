@@ -13,6 +13,27 @@ export const switchFavoritesState = id => ({
   type: "SWITCH_FAVORITES_STATE"
 });
 
+export const addSongSuccess = link => ({
+  link,
+  type: "ADD_SONG_SUCCESS"
+});
+
+export const addSongError = error => ({
+  error,
+  type: "ADD_SONG_SUCCESS"
+});
+
+export const addToFavoriteSuccess = data => ({
+  data,
+  type: "ADD_TO_FAVORITE_SUCCESS"
+});
+
+export const addToFavoriteError = error => ({
+  error,
+  type: "ADD_TO_FAVORITE_ERROR"
+});
+
+//
 export const fetchFavoriteSongsSuccess = data => ({
   data,
   type: "FETCH_FAVORITESONGS_SUCCESS"

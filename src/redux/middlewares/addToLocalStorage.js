@@ -1,20 +1,22 @@
-import { switchFavoritesState } from "../actions";
+import { addToFavoriteSuccess, switchFavoritesState } from "../actions";
 
-const addToLocalStorage = id => dispatch => {
+const addToLocalStorage = (song) => dispatch => {
   const prevIdes = localStorage.getItem("iTunesApp");
 
-  if(prevIdes === null) {
-    localStorage.setItem("iTunesApp", id);
-    dispatch(switchFavoritesState(id))
+  if(typeof prevIdes !== "string") {
+    localStorage.setItem("iTunesApp", song.trackId);
+    dispatch(switchFavoritesState(song.trackId));
+    dispatch(addToFavoriteSuccess(song));
+  } else if(prevIdes.split(" ").every(id => id - song.trackId)){
+    localStorage.setItem("iTunesApp", prevIdes + " " + song.trackId);
+    dispatch(switchFavoritesState(song.trackId));
+    dispatch(addToFavoriteSuccess(song));
   } else {
-    const currentIdes = prevIdes + " " + id;
-
-    localStorage.removeItem("iTunesApp");
-    localStorage.setItem("iTunesApp", currentIdes);
-
-    dispatch(switchFavoritesState(id))
+    const currentIdes = prevIdes.split(" ").filter(id => id - song.trackId)
+    localStorage.setItem("iTunesApp", currentIdes.join(" "));
+    dispatch(switchFavoritesState(song.trackId));
+    dispatch(addToFavoriteSuccess(song));
   }
-
 };
 
 export default addToLocalStorage

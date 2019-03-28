@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -20,9 +20,9 @@ const styles = (theme) => ({
       display: 'block',
     }
   },
-    songInfo:{
+  songInfo:{
     position: "absolute"
-    },
+  },
   toolbar:{
     display: 'flex',
     alignItems: 'center',
@@ -34,17 +34,21 @@ const styles = (theme) => ({
   }
 });
 
-function Player(props) {
-  const { classes } = props;
-  return (
+class Player extends Component {
+  audio = new Audio(this.props.link);
+
+  render(){
+    const { classes, songs, index } = this.props;
+
+    return (
       <AppBar color="primary" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div className={classes.songInfo}>
             <Typography className={classes.title} variant="h5" color="inherit" noWrap>
-              Song name
+              {songs[index] ? songs[index].trackName : ""}
             </Typography>
             <Typography className={classes.title} variant="h6" color="secondary" noWrap>
-              Artist
+              {songs[index] ? songs[index].artistName : ""}
             </Typography>
           </div>
           <div className={classes.controls}>
@@ -60,7 +64,8 @@ function Player(props) {
           </div>
         </Toolbar>
       </AppBar>
-  );
+    );
+  }
 }
 
 export default withStyles(styles)(Player);
