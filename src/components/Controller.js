@@ -6,12 +6,11 @@ import Player from "../redux/containers/Player";
 import Menu from "../redux/containers/Menu";
 
 class Controller extends Component {
-    // componentDidMount(){
-    //
-    //     const id = localStorage.getItem("iTunesApp");
-    //     if(typeof id !== "object")
-    //     id.split(" ").forEach(id => this.props.getSongs(null, id))
-    // };
+    componentDidMount(){
+        const id = localStorage.getItem("iTunesApp");
+        if(typeof id === "string" && id.trim())
+        id.trim().split(" ").forEach(id => this.props.getSongs(null, id))
+    };
 
     render(){
         return (

@@ -69,7 +69,7 @@ class CardItem extends Component {
   };
 
   componentDidMount() {
-    if(this.props.song.isFavorite)
+    if(this.props.song.isFavorite || this.props.favorites.some(song => song.trackId === this.props.song.trackId) )
       this.setState({favoriteButtonColor: "error"})
   }
 

@@ -9,6 +9,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Favorite from "@material-ui/icons/Favorite"
 import HomeIcon from "@material-ui/icons/Home"
+import DeleteForever from "@material-ui/icons/DeleteForever"
 
 const styles = {
   list: {
@@ -49,6 +50,10 @@ class SwipeableTemporaryDrawer extends React.Component {
                     <ListItemText primary={"Favorites"} />
                   </ListItem>
                 </Link>
+                <ListItem button >
+                  <DeleteForever />
+                  <ListItemText primary={"Clear favorites"} />
+                </ListItem>
               </List>
               <Divider />
             </div>

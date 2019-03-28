@@ -11,7 +11,6 @@ class Favorites extends Component {
 
   render() {
     return (
-      <React.Fragment>
             <Grid
               container
               direction="row"
@@ -19,7 +18,6 @@ class Favorites extends Component {
               spacing={8}>
               <CardList songs={this.props.favorites}/>
             </Grid>
-      </React.Fragment>
     );
   }
 }

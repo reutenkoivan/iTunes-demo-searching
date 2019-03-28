@@ -3,6 +3,21 @@ import {
   fetchSongsError, addToFavoriteSuccess, addToFavoriteError
 } from "../actions";
 
+const createSongObject = (data, isFavorite) => {
+  return {
+    artistName: data.artistName,
+    trackName: data.trackName,
+    previewUrl: data.previewUrl,
+    artworkUrl: data.artworkUrl100,
+    trackPrice: data.trackPrice,
+    trackId: data.trackId,
+    collectionName: data.collectionName,
+    artistViewUrl: data.artistViewUrl,
+    isFavorite
+  }
+};
+
+
 const fetchSongs = (str, id) => dispatch => {
   return typeof id === "undefined"
     ? fetch(`https://itunes.apple.com/search?term=${str}?&media=music&limit=10`)
@@ -14,7 +29,7 @@ const fetchSongs = (str, id) => dispatch => {
     : fetch(`https://itunes.apple.com/lookup?id=${id}&entity=song`)
       .then(response => response.json())
       .then(data => {
-        dispatch(addToFavoriteSuccess({data, isFavorite: true}))
+        dispatch(addToFavoriteSuccess(createSongObject(data.results[0], false)))
       })
       .catch(err => dispatch(addToFavoriteError(err)))
 };
