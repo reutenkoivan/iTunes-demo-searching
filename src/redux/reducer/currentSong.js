@@ -22,9 +22,6 @@ const currentSong = (state = initialState, action) => {
 
       return newObj
     }
-    case "ADD_SONG_ERROR": {
-      return action.error;
-    }
     default: {
       return state;
     }

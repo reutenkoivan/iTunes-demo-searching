@@ -16,9 +16,6 @@ const songs = (state = [], action) => {
       )
       )]
     }
-    case "FETCH_SONGS_ERROR": {
-      return action.error
-    }
     case "SWITCH_FAVORITES_STATE": {
       if(state.some(song => song.trackId === action.id))
       return [...state.map(song =>{
@@ -31,6 +28,9 @@ const songs = (state = [], action) => {
       })];
 
       return state
+    }
+    case "FETCH_SONGS_ERROR":{
+      return action.error
     }
     default: {
       return state;

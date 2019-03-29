@@ -6,9 +6,6 @@ const addToFavorite = (state = [], action) => {
 
       return state.filter(song => song.trackId !== action.data.trackId)
     }
-    case "ADD_TO_FAVORITE_ERROR": {
-      return action.error;
-    }
     default: {
       return state;
     }

@@ -90,7 +90,7 @@ class Menu extends Component {
 
   render() {
     const { classes } = this.props;
-
+    const typeOfPage = this.props.history.location.pathname.substring(1);
     return (
       <React.Fragment>
         <div className={classes.root}>
@@ -100,7 +100,7 @@ class Menu extends Component {
                 <MenuIcon />
               </IconButton>
               <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                Страница поиска
+                {typeOfPage === "" ? "Searching page" : "Favorite songs"}
               </Typography>
               <div className={classes.grow} />
               <div className={classes.search}>
@@ -112,7 +112,7 @@ class Menu extends Component {
                   minLength={2}
                   debounceTimeout={700}
                   onChange={this.searchingValue}
-                  placeholder="Какой трек ищете?"
+                  placeholder="Song..."
                   classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,

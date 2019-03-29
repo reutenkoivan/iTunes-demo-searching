@@ -1,6 +1,6 @@
 import {
   fetchSongsSuccess,
-  fetchSongsError, addToFavoriteSuccess, addToFavoriteError
+  fetchSongsError, addToFavorite, addToFavoriteError
 } from "../actions";
 
 const createSongObject = (data, isFavorite) => {
@@ -29,7 +29,7 @@ const fetchSongs = (str, id) => dispatch => {
     : fetch(`https://itunes.apple.com/lookup?id=${id}&entity=song`)
       .then(response => response.json())
       .then(data => {
-        dispatch(addToFavoriteSuccess(createSongObject(data.results[0], false)))
+        dispatch(addToFavorite(createSongObject(data.results[0], false)))
       })
       .catch(err => dispatch(addToFavoriteError(err)))
 };
