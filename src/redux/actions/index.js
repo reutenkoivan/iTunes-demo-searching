@@ -13,8 +13,9 @@ export const switchFavoritesState = id => ({
   type: "SWITCH_FAVORITES_STATE"
 });
 
-export const addSongSuccess = link => ({
-  link,
+export const addSongSuccess = (song, playlist) => ({
+  song,
+  playlist,
   type: "ADD_SONG_SUCCESS"
 });
 

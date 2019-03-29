@@ -42,30 +42,13 @@ const styles = theme => ({
 class CardItem extends Component {
 
   state = {
-    favoriteButtonColor: "primary",
-    soundState: false
+    favoriteButtonColor: "primary"
   };
 
-  audio = new Audio(this.props.song.previewUrl);
-
   switchSoundState = () => {
-    if(!this.state.soundState){
-      this.setState({ soundState: true });
-      this.audio.play()
-    } else {
-      this.setState({ soundState: false });
-      this.audio.pause()
-    }
-
-    this.props.addSongToPlayer(this.props.song.previewUrl);
-
-    if(!this.state.soundState){
-      setInterval(()=>{
-        if(this.audio.ended) {
-          this.setState({ soundState: !this.audio.ended });
-          clearInterval()
-        }
-      },1000)} else clearInterval()
+    const isFavorite = this.props.favorite;
+    const playlist = isFavorite ? this.props.favorites : this.props.searching;
+    this.props.addSongToPlayer(this.props.song, playlist);
   };
 
   componentDidMount() {
@@ -76,14 +59,14 @@ class CardItem extends Component {
   switchFavoriteState = () => {
     this.props.switchFavoritesState(this.props.song);
     this.setState(
-      this.state.favoriteButtonColor === "primary"
+      (this.state.favoriteButtonColor === "primary")
         ? {favoriteButtonColor: "error"}
         : {favoriteButtonColor: "primary"}
     )
   };
 
   render() {
-    const { classes, song } = this.props;
+    const { classes, song, playerInfo } = this.props;
 
     return (
       <Grid item xs={12}>
@@ -98,8 +81,14 @@ class CardItem extends Component {
               </Typography>
             </CardContent>
             <div className={classes.controls}>
-              <IconButton aria-label={this.state.soundState ? "Pause": "Play"}>
-                {this.state.soundState
+              <IconButton
+                onClick={this.switchSoundState}
+                aria-label={  playerInfo.isPlaying && playerInfo.trackLink === song.previewUrl
+                  ? "Pause"
+                  : "Play"
+                }
+              >
+                {playerInfo.isPlaying && playerInfo.trackLink === song.previewUrl
                   ? <Pause color="primary"/>
                   : <PlayArrowIcon color="primary"/>
                 }

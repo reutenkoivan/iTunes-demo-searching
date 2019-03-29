@@ -7,7 +7,7 @@ const SearchingPage = props => (
         direction="row"
         alignItems="center"
         spacing={8}>
-    <CardList songs = {props.songs}/>
+    <CardList favorite={false} songs = {props.songs}/>
   </Grid>
 )
 

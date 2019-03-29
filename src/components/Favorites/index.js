@@ -16,7 +16,7 @@ class Favorites extends Component {
               direction="row"
               alignItems="center"
               spacing={8}>
-              <CardList songs={this.props.favorites}/>
+              <CardList favorite songs={this.props.favorites}/>
             </Grid>
     );
   }

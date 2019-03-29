@@ -5,8 +5,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import Pause from "@material-ui/icons/Pause"
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import Typography from "@material-ui/core/Typography";
+
 
 
 const styles = (theme) => ({
@@ -35,30 +37,66 @@ const styles = (theme) => ({
 });
 
 class Player extends Component {
-  audio = new Audio(this.props.link);
+
+  switchSoundState = () => {
+    const typeOfPage = this.props.history.location.pathname.substring(1);
+
+    if(this.props.playerInfo.artistName) {
+
+      this.props.track.favorites.length
+        ? this.props.addSongToPlayer(this.props.track.favorites[0], this.props.favoritesSongs)
+        : this.props.addSongToPlayer(this.props.track.songs[0], this.props.searchingSongs);
+
+    } else if(typeOfPage === "favorites" && this.props.favoritesSongs[0]){
+        this.props.addSongToPlayer(this.props.favoritesSongs[0], this.props.favoritesSongs)
+    } else if(!typeOfPage && this.props.searchingSongs[0])
+      this.props.addSongToPlayer(this.props.searchingSongs[0], this.props.searchingSongs)
+  };
+
+  playNext = () => {
+    let { playlist, index } = this.props.playerInfo;
+    index = index === this.props.playerInfo.playlist.length-1 ? 0 : index+1;
+    if(this.props.playerInfo.artistName && this.props.playerInfo.playlist.length !== 1)
+      this.props.addSongToPlayer(playlist[index], playlist)
+  };
+
+  playPrevious = () => {
+    let { playlist, index } = this.props.playerInfo;
+    index = index === 0 ? this.props.playerInfo.playlist.length : index;
+    if(this.props.playerInfo.artistName && this.props.playerInfo.playlist.length !== 1)
+      this.props.addSongToPlayer(playlist[index-1], playlist)
+  };
 
   render(){
-    const { classes, songs, index } = this.props;
-
+    const { classes, playerInfo} = this.props;
     return (
       <AppBar color="primary" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div className={classes.songInfo}>
             <Typography className={classes.title} variant="h5" color="inherit" noWrap>
-              {songs[index] ? songs[index].trackName : ""}
+              {playerInfo.trackName}
             </Typography>
             <Typography className={classes.title} variant="h6" color="secondary" noWrap>
-              {songs[index] ? songs[index].artistName : ""}
+              {playerInfo.artistName}
             </Typography>
           </div>
           <div className={classes.controls}>
-            <IconButton color="secondary" aria-label="Previous">
+            <IconButton onClick={this.playPrevious} color="secondary" aria-label="Previous">
               <SkipPreviousIcon />
             </IconButton>
-            <IconButton color="secondary" aria-label="Play">
-              <PlayArrowIcon/>
+            <IconButton
+              onClick={this.switchSoundState}
+              aria-label={  playerInfo.isPlaying
+                ? "Pause"
+                : "Play"
+              }
+            >
+              {playerInfo.isPlaying
+                ? <Pause color="secondary"/>
+                : <PlayArrowIcon color="secondary"/>
+              }
             </IconButton>
-            <IconButton color="secondary" aria-label="Next">
+            <IconButton onClick={this.playNext} color="secondary" aria-label="Next">
               <SkipNextIcon />
             </IconButton>
           </div>
