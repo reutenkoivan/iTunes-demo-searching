@@ -115,6 +115,7 @@ class CardItem extends Component {
             image={song.artworkUrl}
           />
         </Card>
+        <br/>
       </Grid>
     );
   }

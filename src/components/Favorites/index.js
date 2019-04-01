@@ -8,10 +8,9 @@ const Favorites = props => {
   return (
     props.favorites.length
       ? <Grid
-        container
-        direction="row"
-        alignItems="center"
-        spacing={8}>
+        item
+        xs={12}
+      >
         <CardList isfavorite songs={props.favorites}/>
       </Grid>
       : <Typography omponent="h2" variant="h4" color="secondary" gutterBottom align="center">
