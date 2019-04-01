@@ -1,20 +1,7 @@
 const songs = (state = [], action) => {
   switch (action.type) {
     case "FETCH_SONGS_SUCCESS": {
-      return [...action.data.data.results.map(searchedItem =>(
-        {
-          artistName: searchedItem.artistName,
-          trackName: searchedItem.trackName,
-          previewUrl: searchedItem.previewUrl,
-          artworkUrl: searchedItem.artworkUrl100,
-          trackPrice: searchedItem.trackPrice,
-          trackId: searchedItem.trackId,
-          collectionName: searchedItem.collectionName,
-          artistViewUrl: searchedItem.artistViewUrl,
-          isFavorite: action.data.isFavorite
-        }
-      )
-      )]
+      return [...action.data]
     }
     case "SWITCH_FAVORITES_STATE": {
       if(state.some(song => song.trackId === action.id))

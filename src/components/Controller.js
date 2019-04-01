@@ -31,6 +31,7 @@ class Controller extends Component {
     if(prevProps.playerInfo.trackLink && trackLink !== prevProps.playerInfo.trackLink){
       index = index === prevProps.playerInfo.playlist.length-1 ? 0 : index+1;
       this.pause();
+
       this.audio.removeEventListener("ended", () => {this.props.addSongToPlayer(playlist[index], playlist)});
     }
 
