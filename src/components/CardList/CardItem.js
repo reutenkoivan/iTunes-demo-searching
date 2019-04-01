@@ -71,18 +71,21 @@ class CardItem extends Component {
 
     return (
       <Grid item xs={12}>
-        <Card className={classes.card} title={song.collectionName}>
+        <Card className={classes.card}>
           <div className={classes.details}>
             <CardContent className={classes.content}>
-              <Typography component="h5" variant="h5">
+              <Typography component="h5" variant="h5" title={`name of track is ${song.trackName}`}>
                 {song.trackName}
               </Typography>
-              <Typography variant="subtitle1" color="textSecondary">
+              <Typography variant="subtitle1" color="textSecondary" title={`artist name is ${song.artistName}`}>
                 {song.artistName}
               </Typography>
             </CardContent>
             <div className={classes.controls}>
               <IconButton
+                title={playerInfo.isPlaying && playerInfo.trackLink === song.previewUrl
+                  ? "Pause"
+                  : "Play"}
                 onClick={this.switchSoundState}
                 aria-label={  playerInfo.isPlaying && playerInfo.trackLink === song.previewUrl
                   ? "Pause"
@@ -94,13 +97,19 @@ class CardItem extends Component {
                   : <PlayArrowIcon color="primary"/>
                 }
               </IconButton>
-              <IconButton onClick={this.switchFavoriteState} aria-label="Add-to-favorite">
+              <IconButton
+                onClick={this.switchFavoriteState}
+                aria-label="Add-to-favorite"
+                title={this.props.favorites.some(song => song.trackId === this.props.song.trackId)
+                  ? "Favorite"
+                  : "Not favorite"
+                }>
                 <FavoriteIcon color={this.state.favoriteButtonColor} />
               </IconButton>
 
               {this.state.favoriteButtonColor === "error"
                 ? <Link href={song.artistViewUrl} target="_blank">
-                  <Typography className={classes.price} variant="subtitle1" color="textSecondary">
+                  <Typography className={classes.price} variant="subtitle1" color="textSecondary" title="Look on iTunes">
                     Look on iTunes
                   </Typography>
                 </Link>
@@ -111,6 +120,7 @@ class CardItem extends Component {
             </div>
           </div>
           <CardMedia
+            title={song.collectionName}
             className={classes.cover}
             image={song.artworkUrl}
           />

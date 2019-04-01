@@ -7,15 +7,12 @@ import Typography from "@material-ui/core/Typography";
 const Favorites = props => {
   return (
     props.favorites.length
-      ? <Grid
-        item
-        xs={12}
-      >
+      ? <Grid item xs={12}>
         <CardList isfavorite songs={props.favorites}/>
       </Grid>
       : <Typography omponent="h2" variant="h4" color="secondary" gutterBottom align="center">
-          You don't have favorites yet
-        </Typography>
+        You don't have favorites yet
+      </Typography>
   )};
 
 Favorites.propTypes = {

@@ -6,10 +6,7 @@ import Typography from "@material-ui/core/Typography";
 
 const SearchingPage = props => (
   props.songs.length
-    ? <Grid
-      item
-      xs={12}
-    >
+    ? <Grid item xs={12}>
       <CardList favorite={false} songs = {props.songs}/>
     </Grid>
     : <Typography omponent="h2" variant="h4" color="secondary" gutterBottom align="center">
