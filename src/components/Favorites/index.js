@@ -14,7 +14,7 @@ const Favorites = props => {
         spacing={8}>
         <CardList isfavorite songs={props.favorites}/>
       </Grid>
-      : <Typography omponent="h2" variant="headline" color="secondary" gutterBottom align="center">
+      : <Typography omponent="h2" variant="h4" color="secondary" gutterBottom align="center">
           You don't have favorites yet
         </Typography>
   )};

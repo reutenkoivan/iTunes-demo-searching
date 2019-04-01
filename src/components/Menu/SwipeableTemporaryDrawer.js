@@ -8,7 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Favorite from "@material-ui/icons/Favorite"
-import HomeIcon from "@material-ui/icons/Home"
+import SearchIcon from '@material-ui/icons/Search';
 import DeleteForever from "@material-ui/icons/DeleteForever"
 import PropTypes from "prop-types";
 
@@ -44,8 +44,8 @@ class SwipeableTemporaryDrawer extends React.Component {
               <List>
                 <Link component={RouterLink} to="/">
                   <ListItem button >
-                    <HomeIcon/>
-                    <ListItemText primary={"Home"} />
+                    <SearchIcon/>
+                    <ListItemText primary={"Search"} />
                   </ListItem>
                 </Link>
                 <Link component={RouterLink} to="/favorites">

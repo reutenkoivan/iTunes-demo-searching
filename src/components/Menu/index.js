@@ -104,22 +104,25 @@ class Menu extends Component {
                 {typeOfPage === "" ? "Searching page" : "Favorite songs"}
               </Typography>
               <div className={classes.grow} />
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
+              {typeOfPage === ""
+                ? <div className={classes.search}>
+                  <div className={classes.searchIcon}>
+                    <SearchIcon />
+                  </div>
+                  <DebounceInput
+                    element={InputBase}
+                    minLength={2}
+                    debounceTimeout={700}
+                    onChange={this.searchingValue}
+                    placeholder="Song..."
+                    classes={{
+                      root: classes.inputRoot,
+                      input: classes.inputInput,
+                    }}
+                  />
                 </div>
-                <DebounceInput
-                  element={InputBase}
-                  minLength={2}
-                  debounceTimeout={700}
-                  onChange={this.searchingValue}
-                  placeholder="Song..."
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                  }}
-                />
-              </div>
+                : ""
+              }
             </Toolbar>
           </AppBar>
         </div>

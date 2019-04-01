@@ -12,7 +12,7 @@ const SearchingPage = props => (
             spacing={8}>
       <CardList favorite={false} songs = {props.songs}/>
     </Grid>
-    : <Typography omponent="h2" variant="headline" color="secondary" gutterBottom align="center">
+    : <Typography omponent="h2" variant="h4" color="secondary" gutterBottom align="center">
       For searching write in input field
     </Typography>
 );
