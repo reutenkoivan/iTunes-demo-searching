@@ -1,4 +1,4 @@
-const addToFavorite = (state = [], action) => {
+const favorites = (state = [], action) => {
   switch (action.type) {
     case "ADD_TO_FAVORITE_SUCCESS": {
       if(typeof action.data != "undefined" && state.every(song => song.trackId - action.data.trackId))
@@ -12,4 +12,4 @@ const addToFavorite = (state = [], action) => {
   }
 };
 
-export default addToFavorite;
+export default favorites;

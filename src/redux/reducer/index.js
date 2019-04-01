@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import addToFavorite from "./addToFavorite"
+import favorites from "./favorites"
 import songs from "./songs"
-import currentSong from "./currentSong"
+import playerInfo from "./playerInfo"
 
-const reducer = combineReducers({currentSong, songs, addToFavorite});
+const reducer = combineReducers({playerInfo, songs, favorites});
 export default reducer

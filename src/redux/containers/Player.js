@@ -4,12 +4,12 @@ import { addSongSuccess } from "../actions";
 
 const mapStateToProps = state => ({
   track: {
-    songs: state.songs.filter(song => song.trackId === state.currentSong.trackId),
-    favorites: state.addToFavorite.filter(song => song.trackId === state.currentSong.trackId)
+    songs: state.songs.filter(song => song.trackId === state.playerInfo.trackId),
+    favorites: state.favorites.filter(song => song.trackId === state.playerInfo.trackId)
   },
-  playerInfo: state.currentSong,
+  playerInfo: state.playerInfo,
   searchingSongs: state.songs,
-  favoritesSongs: state.addToFavorite
+  favoritesSongs: state.favorites
 });
 
 const mapDispatchToProps = dispatch => ({

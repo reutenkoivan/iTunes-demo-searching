@@ -19,7 +19,7 @@ export const addSongSuccess = (song, playlist) => ({
   type: "ADD_SONG_SUCCESS"
 });
 
-export const addToFavorite = data => ({
+export const favorites = data => ({
   data,
   type: "ADD_TO_FAVORITE_SUCCESS"
 });

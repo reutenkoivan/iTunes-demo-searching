@@ -3,7 +3,7 @@ import Favorites from "../../components/Favorites";
 
 const mapStateToProps = state => ({
     songs: state.songs.filter(song => song.isFavorite),
-    favorites: state.addToFavorite
+    favorites: state.favorites
   });
 
 export default connect(mapStateToProps)(Favorites);

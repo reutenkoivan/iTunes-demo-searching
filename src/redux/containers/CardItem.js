@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import CardItem from "../../components/CardList/CardItem";
-import addToLocalStorage from "../middlewares/addToLocalStorage";
+import addToLocalStorage from "../actionCreators/addToLocalStorage";
 import { addSongSuccess } from "../actions";
 
 const mapStateToProps = state => ({
-  favorites: state.addToFavorite,
-  playerInfo: state.currentSong,
+  favorites: state.favorites,
+  playerInfo: state.playerInfo,
   searching: state.songs,
 });
 

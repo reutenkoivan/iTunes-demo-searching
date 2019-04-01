@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import Controller from "../../components/Controller";
-import fetchSongs from "../middlewares/fetchSongs";
+import fetchSongs from "../actionCreators/fetchSongs";
 import { addSongSuccess } from "../actions";
 
 const mapStateToProps = state => ({
-  playerInfo: state.currentSong
+  playerInfo: state.playerInfo
 });
 
 const mapDispatchToProps = dispatch => ({

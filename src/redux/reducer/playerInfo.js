@@ -8,7 +8,7 @@ const initialState = {
   index: 0
 };
 
-const currentSong = (state = initialState, action) => {
+const playerInfo = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_SONG_SUCCESS": {
       const newObj = Object.assign({}, state);
@@ -28,4 +28,4 @@ const currentSong = (state = initialState, action) => {
   }
 };
 
-export default currentSong;
+export default playerInfo;

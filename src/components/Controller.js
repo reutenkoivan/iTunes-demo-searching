@@ -1,14 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SearchingPage from "../redux/containers/SearchingPage";
 import Favorites from "../redux/containers/Favorites";
 import Player from "../redux/containers/Player";
 import Menu from "../redux/containers/Menu";
-
-/*this.props.addSongToPlayer(
-  this.props.playerInfo.playlist[this.props.playerInfo.index],
-  this.props.playerInfo.playlist
-)*/
 
 class Controller extends Component {
   componentDidMount(){
@@ -18,29 +13,40 @@ class Controller extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    const {trackLink, isPlaying} = this.props.playerInfo;
+    let {trackLink, isPlaying, playlist, index} = this.props.playerInfo;
+
     if(trackLink !== prevProps.playerInfo.trackLink) {
-      this.audio.src = trackLink;
-      // this.audio.onEnded = () => {this.props.addSongToPlayer(playlist[index], playlist)};
-      isPlaying ? this.playSong() : this.pause()
+      this.audio = new Audio(trackLink);
+      index = index === this.props.playerInfo.playlist.length-1 ? 0 : index+1;
+      this.audio.addEventListener("ended", () => {this.props.addSongToPlayer(playlist[index], playlist)});
+      this.playSong()
     } else {
-      isPlaying ? this.playSong() : this.pause()
+      isPlaying ? this.playSong() : this.pause();
     }
   };
 
-  audio = new Audio(this.props.playerInfo.trackLink);
+  getSnapshotBeforeUpdate(prevProps) {
+    let {playlist, index, trackLink} = this.props.playerInfo;
+    if(prevProps.playerInfo.trackLink && trackLink !== prevProps.playerInfo.trackLink){
+      index = index === prevProps.playerInfo.playlist.length-1 ? 0 : index+1;
+      this.pause();
+      this.audio.removeEventListener("ended", () => {this.props.addSongToPlayer(playlist[index], playlist)});
+    }
+
+    return null
+  }
 
   playSong = () => this.audio.play();
   pause = () => this.audio.pause();
 
   render(){
     return (
-      <Router>
-        <Route path="/" component={Menu} /><br/>
-        <Route exact path="/" component={SearchingPage} />
-        <Route exact path="/favorites" component={Favorites} /><br/><br/><br/>
-        <Route path="/" component={Player} />
-      </Router>
+        <Router>
+          <Route path="/" component={Menu} /><br/>
+          <Route exact path="/" component={SearchingPage} />
+          <Route exact path="/favorites" component={Favorites} /><br/><br/><br/>
+          <Route path="/" component={Player} />
+        </Router>
     );
   }
 }
