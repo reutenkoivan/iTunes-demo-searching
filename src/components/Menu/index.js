@@ -8,7 +8,7 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import SwipeableTemporaryDrawer from "../Menu/SwipeableTemporaryDrawer"
+import SwipeableTemporaryDrawer from "../../redux/containers/SwipeableTemporaryDrawer"
 import {DebounceInput} from 'react-debounce-input';
 import PropTypes from "prop-types";
 

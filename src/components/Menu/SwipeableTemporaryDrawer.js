@@ -10,6 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Favorite from "@material-ui/icons/Favorite"
 import HomeIcon from "@material-ui/icons/Home"
 import DeleteForever from "@material-ui/icons/DeleteForever"
+import PropTypes from "prop-types";
 
 const styles = {
   list: {
@@ -20,10 +21,13 @@ const styles = {
 class SwipeableTemporaryDrawer extends React.Component {
 
   toggleDrawer = open => this.props.toggleDrawer(open);
+  clearStorage = () => {
+    this.props.favorites.forEach(song => this.props.switchFavoritesState(song));
+    localStorage.removeItem("iTunesApp");
+  };
 
   render() {
     const { classes } = this.props;
-
     return (
       <div>
         <SwipeableDrawer
@@ -50,10 +54,16 @@ class SwipeableTemporaryDrawer extends React.Component {
                     <ListItemText primary={"Favorites"} />
                   </ListItem>
                 </Link>
-                <ListItem button >
-                  <DeleteForever />
-                  <ListItemText primary={"Clear favorites"} />
-                </ListItem>
+                <Link
+                  component={RouterLink}
+                  onClick={this.clearStorage}
+                  to="/"
+                >
+                  <ListItem button >
+                    <DeleteForever />
+                    <ListItemText primary={"Clear favorites"} />
+                  </ListItem>
+                </Link>
               </List>
               <Divider />
             </div>
@@ -63,5 +73,12 @@ class SwipeableTemporaryDrawer extends React.Component {
     );
   }
 }
+
+SwipeableTemporaryDrawer.propTypes = {
+  classes: PropTypes.object,
+  toggleDrawer: PropTypes.func,
+  favorites: PropTypes.array,
+  switchFavoritesState: PropTypes.func
+};
 
 export default withStyles(styles)(SwipeableTemporaryDrawer);
