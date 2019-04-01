@@ -9,8 +9,6 @@ import Pause from "@material-ui/icons/Pause"
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import Typography from "@material-ui/core/Typography";
 
-
-
 const styles = (theme) => ({
   appBar: {
     top: 'auto',
@@ -40,30 +38,34 @@ class Player extends Component {
 
   switchSoundState = () => {
     const typeOfPage = this.props.history.location.pathname.substring(1);
+    const {favorites, songs} = this.props.track;
+    const {favoritesSongs, searchingSongs, playerInfo} = this.props;
 
-    if(this.props.playerInfo.artistName) {
+    if(playerInfo.artistName) {
 
-      this.props.track.favorites.length
-        ? this.props.addSongToPlayer(this.props.track.favorites[0], this.props.favoritesSongs)
-        : this.props.addSongToPlayer(this.props.track.songs[0], this.props.searchingSongs);
+      favorites.length
+        ? this.props.addSongToPlayer(favorites[0], favoritesSongs)
+        : this.props.addSongToPlayer(songs[0], searchingSongs);
 
-    } else if(typeOfPage === "favorites" && this.props.favoritesSongs[0]){
-        this.props.addSongToPlayer(this.props.favoritesSongs[0], this.props.favoritesSongs)
-    } else if(!typeOfPage && this.props.searchingSongs[0])
-      this.props.addSongToPlayer(this.props.searchingSongs[0], this.props.searchingSongs)
+    } else if(typeOfPage === "favorites" && favoritesSongs[0]){
+        this.props.addSongToPlayer(favoritesSongs[0], favoritesSongs)
+    } else if(!typeOfPage && searchingSongs[0])
+      this.props.addSongToPlayer(searchingSongs[0], searchingSongs)
   };
 
   playNext = () => {
-    let { playlist, index } = this.props.playerInfo;
-    index = index === this.props.playerInfo.playlist.length-1 ? 0 : index+1;
-    if(this.props.playerInfo.artistName && this.props.playerInfo.playlist.length !== 1)
+    let { playlist, index, artistName } = this.props.playerInfo;
+
+    index = index === playlist.length-1 ? 0 : index+1;
+    if(artistName && playlist.length !== 1)
       this.props.addSongToPlayer(playlist[index], playlist)
   };
 
   playPrevious = () => {
-    let { playlist, index } = this.props.playerInfo;
-    index = index === 0 ? this.props.playerInfo.playlist.length : index;
-    if(this.props.playerInfo.artistName && this.props.playerInfo.playlist.length !== 1)
+    let { playlist, index, artistName } = this.props.playerInfo;
+
+    index = index === 0 ? playlist.length : index;
+    if(artistName && playlist.length !== 1)
       this.props.addSongToPlayer(playlist[index-1], playlist)
   };
 
@@ -86,7 +88,7 @@ class Player extends Component {
             </IconButton>
             <IconButton
               onClick={this.switchSoundState}
-              aria-label={  playerInfo.isPlaying
+              aria-label={playerInfo.isPlaying
                 ? "Pause"
                 : "Play"
               }

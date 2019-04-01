@@ -1,12 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import CardItem from "../../redux/containers/CardItem" ;
+import PropTypes from "prop-types";
 
-class CardList extends Component {
-  render(){
-    return this.props.songs.map(song =>
-      <CardItem key={song.trackId} favorite={this.props.favorite} song={song}/>
-    );
-  }
-}
+const CardList = props => {
+    return props.songs.map(song =>
+        <CardItem key={song.trackId} favorite={props.isfavorite} song={song}/>
+      )
+  };
+
+CardList.propTypes = {
+  isfavorite: PropTypes.bool,
+  songs: PropTypes.array
+};
 
 export default CardList;

@@ -10,6 +10,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import Pause from "@material-ui/icons/PauseCircleFilled"
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Grid from "@material-ui/core/Grid";
+import PropTypes from "prop-types";
 
 const styles = theme => ({
 
@@ -118,5 +119,16 @@ class CardItem extends Component {
     );
   }
 }
+
+CardItem.propTypes = {
+  classes: PropTypes.object,
+  favorite: PropTypes.bool,
+  favorites: PropTypes.array,
+  searching: PropTypes.array,
+  song: PropTypes.object,
+  playerInfo: PropTypes.object,
+  addSongToPlayer: PropTypes.func,
+  switchFavoritesState: PropTypes.func
+};
 
 export default withStyles(styles)(CardItem);

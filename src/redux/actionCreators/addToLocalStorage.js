@@ -14,7 +14,7 @@ const addToLocalStorage = (song) => dispatch => {
     dispatch(switchFavoritesState(song.trackId));
     dispatch(favorites(song));
   } else {
-    const currentIdes = prevIdes.split(" ").filter(id => id - song.trackId)
+    const currentIdes = prevIdes.split(" ").filter(id => id - song.trackId);
     localStorage.setItem("iTunesApp", currentIdes.join(" ").trim());
 
     dispatch(switchFavoritesState(song.trackId));

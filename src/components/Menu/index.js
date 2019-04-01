@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import SwipeableTemporaryDrawer from "../Menu/SwipeableTemporaryDrawer"
 import {DebounceInput} from 'react-debounce-input';
+import PropTypes from "prop-types";
 
 const styles = theme => ({
   root: {
@@ -127,5 +128,10 @@ class Menu extends Component {
     );
   }
 }
+
+Menu.propTypes = {
+  getSongs: PropTypes.func,
+  classes: PropTypes.object
+};
 
 export default withStyles(styles)(Menu);

@@ -1,25 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import CardList from "../CardList"
+import PropTypes from 'prop-types';
 
-class Favorites extends Component {
-  // componentDidMount() {
-  //   // const link = `https://itunes.apple.com/lookup?id=${"trackId"}&entity=song`
-  //   const favorites = localStorage.getItem("iTunseApp");
-  //   this.props.fetchFavoriteSongs(favorites);
-  // }
-
-  render() {
+const Favorites = props => {
     return (
             <Grid
               container
               direction="row"
               alignItems="center"
               spacing={8}>
-              <CardList favorite songs={this.props.favorites}/>
+              <CardList isfavorite songs={props.favorites}/>
             </Grid>
     );
-  }
-}
+  };
+
+Favorites.propTypes = {
+  favorites: PropTypes.array,
+  favorite: PropTypes.bool
+};
 
 export default Favorites;
