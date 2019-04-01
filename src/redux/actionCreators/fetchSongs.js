@@ -15,8 +15,7 @@ const fetchSongs = (str, id) => dispatch => typeof id === "undefined"
 
     : fetch(`https://itunes.apple.com/lookup?id=${id}&entity=song`)
       .then(response => response.json())
-      .then(data => dispatch(favorites(createSongObject(data.results, false)[0])))
+      .then(data => dispatch(favorites(createSongObject(data.results, true)[0])))
       .catch(err => dispatch(addToFavoriteError(err)));
-
 
 export default fetchSongs
