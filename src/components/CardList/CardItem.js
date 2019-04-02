@@ -53,8 +53,13 @@ class CardItem extends Component {
   };
 
   componentDidMount() {
-    if(this.props.song.isFavorite || this.props.favorites.some(song => song.trackId === this.props.song.trackId) )
+    if(this.props.favorites.some(song => song.trackId === this.props.song.trackId))
       this.setState({favoriteButtonColor: "error"})
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(!this.props.favorites.length && prevState.favoriteButtonColor === "error")
+      this.setState({favoriteButtonColor: "primary"});
   }
 
   switchFavoriteState = () => {
