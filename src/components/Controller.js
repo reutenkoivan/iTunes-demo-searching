@@ -18,7 +18,7 @@ class Controller extends Component {
 
     if(trackLink !== prevProps.playerInfo.trackLink) {
       this.audio = new Audio(trackLink);
-      this.audio.addEventListener("ended", () => this.props.addSongToPlayer(playlist[next], playlist));
+      this.audio.onended = () => {this.props.addSongToPlayer(playlist[next], playlist)};
       this.audio.onloadeddata = () => this.audio.play()
     } else {
       isPlaying ? this.playSong() : this.pause();
@@ -28,7 +28,7 @@ class Controller extends Component {
   getSnapshotBeforeUpdate(prevProps) {
     let {trackLink} = this.props.playerInfo;
     if(prevProps.playerInfo.trackLink && trackLink !== prevProps.playerInfo.trackLink)
-      this.pause();
+      this.audio.src = "";
 
     return null
   };
