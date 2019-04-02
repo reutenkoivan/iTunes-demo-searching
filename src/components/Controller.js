@@ -14,26 +14,21 @@ class Controller extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    let {trackLink, isPlaying, playlist, index} = this.props.playerInfo;
+    let {trackLink, isPlaying, playlist, next} = this.props.playerInfo;
 
     if(trackLink !== prevProps.playerInfo.trackLink) {
       this.audio = new Audio(trackLink);
-      index = index === playlist.length-1 ? 0 : index+1;
-      this.audio.addEventListener("ended", () => {this.props.addSongToPlayer(playlist[index], playlist)});
-      this.playSong()
+      this.audio.addEventListener("ended", () => this.props.addSongToPlayer(playlist[next], playlist));
+      this.audio.onloadeddata = () => this.audio.play()
     } else {
       isPlaying ? this.playSong() : this.pause();
     }
   };
 
   getSnapshotBeforeUpdate(prevProps) {
-    let {playlist, index, trackLink} = this.props.playerInfo;
-    if(prevProps.playerInfo.trackLink && trackLink !== prevProps.playerInfo.trackLink){
-      index = index === prevProps.playerInfo.playlist.length-1 ? 0 : index+1;
+    let {trackLink} = this.props.playerInfo;
+    if(prevProps.playerInfo.trackLink && trackLink !== prevProps.playerInfo.trackLink)
       this.pause();
-      if(!this.audio.ended)
-        this.audio.removeEventListener("ended", () => {this.props.addSongToPlayer(playlist[index], playlist)});
-    }
 
     return null
   };

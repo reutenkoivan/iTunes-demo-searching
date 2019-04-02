@@ -6,7 +6,7 @@ import {
   addToFavoriteError
 } from "../actions";
 
-const fetchSongs = (str, id) => dispatch => typeof id === "undefined"
+const fetchSongs = (str, id) => dispatch => (typeof id === "undefined")
 
     ? fetch(`https://itunes.apple.com/search?term=${str}?&media=music&limit=10`)
     .then(response=> response.json())

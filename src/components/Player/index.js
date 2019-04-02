@@ -48,25 +48,21 @@ class Player extends Component {
         : this.props.addSongToPlayer(songs[0], searchingSongs);
 
     } else if(typeOfPage === "favorites" && favoritesSongs[0]){
-        this.props.addSongToPlayer(favoritesSongs[0], favoritesSongs)
+      this.props.addSongToPlayer(favoritesSongs[0], favoritesSongs)
     } else if(!typeOfPage && searchingSongs[0])
       this.props.addSongToPlayer(searchingSongs[0], searchingSongs)
   };
 
   playNext = () => {
-    let { playlist, index, artistName } = this.props.playerInfo;
-
-    index = index === playlist.length-1 ? 0 : index+1;
+    let { playlist, next, artistName } = this.props.playerInfo;
     if(artistName && playlist.length !== 1)
-      this.props.addSongToPlayer(playlist[index], playlist)
+      this.props.addSongToPlayer(playlist[next], playlist)
   };
 
   playPrevious = () => {
-    let { playlist, index, artistName } = this.props.playerInfo;
-
-    index = index === 0 ? playlist.length : index;
+    let { playlist, previous, artistName } = this.props.playerInfo;
     if(artistName && playlist.length !== 1)
-      this.props.addSongToPlayer(playlist[index-1], playlist)
+      this.props.addSongToPlayer(playlist[previous], playlist)
   };
 
   render(){
