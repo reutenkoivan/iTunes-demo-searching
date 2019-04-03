@@ -4,7 +4,7 @@ exports[`render with true 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <WithStyles(Player)
-    newPlayerInfo={
+    playerInfo={
       Object {
         "artistName": "artistName",
         "index": 1,
@@ -80,7 +80,7 @@ ShallowWrapper {
         "title": "Player-title-2",
         "toolbar": "Player-toolbar-4",
       },
-      "newPlayerInfo": Object {
+      "playerInfo": Object {
         "artistName": "artistName",
         "index": 1,
         "isPlaying": true,
@@ -148,7 +148,7 @@ ShallowWrapper {
           "title": "Player-title-2",
           "toolbar": "Player-toolbar-4",
         },
-        "newPlayerInfo": Object {
+        "playerInfo": Object {
           "artistName": "artistName",
           "index": 1,
           "isPlaying": true,
@@ -235,7 +235,7 @@ exports[`renders without crashing 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <WithStyles(Player)
-    newPlayerInfo={
+    playerInfo={
       Object {
         "artistName": "artistName",
         "index": 1,
@@ -311,7 +311,7 @@ ShallowWrapper {
         "title": "Player-title-2",
         "toolbar": "Player-toolbar-4",
       },
-      "newPlayerInfo": Object {
+      "playerInfo": Object {
         "artistName": "artistName",
         "index": 1,
         "isPlaying": false,
@@ -379,7 +379,7 @@ ShallowWrapper {
           "title": "Player-title-2",
           "toolbar": "Player-toolbar-4",
         },
-        "newPlayerInfo": Object {
+        "playerInfo": Object {
           "artistName": "artistName",
           "index": 1,
           "isPlaying": false,
