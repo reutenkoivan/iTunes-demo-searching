@@ -49,24 +49,6 @@ ShallowWrapper {
         "trackName": "trackName",
       }
     }
-    track={
-      Object {
-        "favorites": Array [],
-        "songs": Array [
-          Object {
-            "artistName": "artistName",
-            "artistViewUrl": "artistViewUrl",
-            "artworkUrl": "artworkUrl100",
-            "collectionName": "collectionName",
-            "isFavorite": false,
-            "previewUrl": "previewUrl",
-            "trackId": "trackId",
-            "trackName": "trackName",
-            "trackPrice": "trackPrice",
-          },
-        ],
-      }
-    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
