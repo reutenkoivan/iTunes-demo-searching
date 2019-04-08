@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Player from "../../components/Player";
-import { addSongSuccess } from "../actions";
+import { addSongSuccess, rootPath } from "../actions";
+
 
 const mapStateToProps = state => ({
   track: {
@@ -9,11 +10,13 @@ const mapStateToProps = state => ({
   },
   playerInfo: state.playerInfo,
   searchingSongs: state.songs,
-  favoritesSongs: state.favorites
+  favoritesSongs: state.favorites,
+  rootPath: state.rootPath
 });
 
 const mapDispatchToProps = dispatch => ({
-  addSongToPlayer: (song, playlist) => dispatch(addSongSuccess(song, playlist))
+  addSongToPlayer: (song, playlist) => dispatch(addSongSuccess(song, playlist)),
+  addRootPath: (path) => dispatch(rootPath(path))
 });
 
 export default connect(

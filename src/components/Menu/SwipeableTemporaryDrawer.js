@@ -27,7 +27,7 @@ class SwipeableTemporaryDrawer extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, rootPath } = this.props;
     return (
       <div>
         <SwipeableDrawer
@@ -42,13 +42,13 @@ class SwipeableTemporaryDrawer extends React.Component {
           >
             <div className={classes.list}>
               <List>
-                <Link component={RouterLink} to="/">
+                <Link component={RouterLink} to={rootPath}>
                   <ListItem button >
                     <SearchIcon/>
                     <ListItemText primary={"Search"} />
                   </ListItem>
                 </Link>
-                <Link component={RouterLink} to="/favorites">
+                <Link component={RouterLink} to={rootPath+"favorites"}>
                   <ListItem button >
                     <Favorite />
                     <ListItemText primary={"Favorites"} />

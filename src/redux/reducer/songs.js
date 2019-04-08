@@ -17,7 +17,7 @@ const songs = (state = [], action) => {
       return state
     }
     case "FETCH_SONGS_ERROR":{
-      return action.error
+      return [action.error];
     }
     default: {
       return state;
