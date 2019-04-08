@@ -37,8 +37,9 @@ const styles = (theme) => ({
 class Player extends Component {
   componentDidMount() {
     const rootPath = this.props.history.location.pathname.split("/").slice(0,2).join("/").trim();
-    this.props.addRootPath(rootPath);
-    if(this.props.history.location.pathname.length === rootPath.length)
+    this.props.addRootPath(rootPath.length - 1 ? rootPath : "");
+
+    if(this.props.history.location.pathname.length === rootPath.length && rootPath.length-1)
       this.props.history.push(`${rootPath}/`)
   };
 
