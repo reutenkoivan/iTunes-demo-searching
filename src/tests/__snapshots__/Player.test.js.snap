@@ -1,0 +1,678 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Player
+    classes={
+      Object {
+        "appBar": "Player-appBar-1",
+        "controls": "Player-controls-5",
+        "songInfo": "Player-songInfo-3",
+        "title": "Player-title-2",
+        "toolbar": "Player-toolbar-4",
+      }
+    }
+    playerInfo={
+      Object {
+        "artistName": "artistName",
+        "index": 1,
+        "isPlaying": false,
+        "next": 2,
+        "playlist": Array [
+          Object {
+            "artistName": "artistName",
+            "artistViewUrl": "artistViewUrl",
+            "artworkUrl": "artworkUrl100",
+            "collectionName": "collectionName",
+            "isFavorite": false,
+            "previewUrl": "previewUrl",
+            "trackId": "trackId",
+            "trackName": "trackName",
+            "trackPrice": "trackPrice",
+          },
+          Object {
+            "artistName": "artistName",
+            "artistViewUrl": "artistViewUrl",
+            "artworkUrl": "artworkUrl100",
+            "collectionName": "collectionName",
+            "isFavorite": false,
+            "previewUrl": "previewUrl",
+            "trackId": "trackId",
+            "trackName": "trackName",
+            "trackPrice": "trackPrice",
+          },
+        ],
+        "previous": 0,
+        "trackId": "trackId",
+        "trackLink": "previewUrl",
+        "trackName": "trackName",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <WithStyles(Toolbar)
+        className="Player-toolbar-4"
+      >
+        <div
+          className="Player-songInfo-3"
+        >
+          <WithStyles(Typography)
+            className="Player-title-2"
+            color="inherit"
+            name="trackName"
+            noWrap={true}
+            variant="h5"
+          >
+            trackName
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            className="Player-title-2"
+            color="secondary"
+            name="artistName"
+            noWrap={true}
+            variant="h6"
+          >
+            artistName
+          </WithStyles(Typography)>
+        </div>
+        <div
+          className="Player-controls-5"
+        >
+          <WithStyles(IconButton)
+            aria-label="Previous"
+            color="secondary"
+            onClick={[Function]}
+          >
+            <pure(SkipPreviousIcon) />
+          </WithStyles(IconButton)>
+          <WithStyles(IconButton)
+            aria-label="Play"
+            onClick={[Function]}
+          >
+            <pure(PlayArrowIcon)
+              color="secondary"
+            />
+          </WithStyles(IconButton)>
+          <WithStyles(IconButton)
+            aria-label="Next"
+            color="secondary"
+            onClick={[Function]}
+          >
+            <pure(SkipNextIcon) />
+          </WithStyles(IconButton)>
+        </div>
+      </WithStyles(Toolbar)>,
+      "className": "Player-appBar-1",
+      "color": "primary",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <div
+            className="Player-songInfo-3"
+          >
+            <WithStyles(Typography)
+              className="Player-title-2"
+              color="inherit"
+              name="trackName"
+              noWrap={true}
+              variant="h5"
+            >
+              trackName
+            </WithStyles(Typography)>
+            <WithStyles(Typography)
+              className="Player-title-2"
+              color="secondary"
+              name="artistName"
+              noWrap={true}
+              variant="h6"
+            >
+              artistName
+            </WithStyles(Typography)>
+          </div>,
+          <div
+            className="Player-controls-5"
+          >
+            <WithStyles(IconButton)
+              aria-label="Previous"
+              color="secondary"
+              onClick={[Function]}
+            >
+              <pure(SkipPreviousIcon) />
+            </WithStyles(IconButton)>
+            <WithStyles(IconButton)
+              aria-label="Play"
+              onClick={[Function]}
+            >
+              <pure(PlayArrowIcon)
+                color="secondary"
+              />
+            </WithStyles(IconButton)>
+            <WithStyles(IconButton)
+              aria-label="Next"
+              color="secondary"
+              onClick={[Function]}
+            >
+              <pure(SkipNextIcon) />
+            </WithStyles(IconButton)>
+          </div>,
+        ],
+        "className": "Player-toolbar-4",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <WithStyles(Typography)
+                className="Player-title-2"
+                color="inherit"
+                name="trackName"
+                noWrap={true}
+                variant="h5"
+              >
+                trackName
+              </WithStyles(Typography)>,
+              <WithStyles(Typography)
+                className="Player-title-2"
+                color="secondary"
+                name="artistName"
+                noWrap={true}
+                variant="h6"
+              >
+                artistName
+              </WithStyles(Typography)>,
+            ],
+            "className": "Player-songInfo-3",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "trackName",
+                "className": "Player-title-2",
+                "color": "inherit",
+                "name": "trackName",
+                "noWrap": true,
+                "variant": "h5",
+              },
+              "ref": null,
+              "rendered": "trackName",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "artistName",
+                "className": "Player-title-2",
+                "color": "secondary",
+                "name": "artistName",
+                "noWrap": true,
+                "variant": "h6",
+              },
+              "ref": null,
+              "rendered": "artistName",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <WithStyles(IconButton)
+                aria-label="Previous"
+                color="secondary"
+                onClick={[Function]}
+              >
+                <pure(SkipPreviousIcon) />
+              </WithStyles(IconButton)>,
+              <WithStyles(IconButton)
+                aria-label="Play"
+                onClick={[Function]}
+              >
+                <pure(PlayArrowIcon)
+                  color="secondary"
+                />
+              </WithStyles(IconButton)>,
+              <WithStyles(IconButton)
+                aria-label="Next"
+                color="secondary"
+                onClick={[Function]}
+              >
+                <pure(SkipNextIcon) />
+              </WithStyles(IconButton)>,
+            ],
+            "className": "Player-controls-5",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "aria-label": "Previous",
+                "children": <pure(SkipPreviousIcon) />,
+                "color": "secondary",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "aria-label": "Play",
+                "children": <pure(PlayArrowIcon)
+                  color="secondary"
+                />,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "color": "secondary",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "aria-label": "Next",
+                "children": <pure(SkipNextIcon) />,
+                "color": "secondary",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <WithStyles(Toolbar)
+          className="Player-toolbar-4"
+        >
+          <div
+            className="Player-songInfo-3"
+          >
+            <WithStyles(Typography)
+              className="Player-title-2"
+              color="inherit"
+              name="trackName"
+              noWrap={true}
+              variant="h5"
+            >
+              trackName
+            </WithStyles(Typography)>
+            <WithStyles(Typography)
+              className="Player-title-2"
+              color="secondary"
+              name="artistName"
+              noWrap={true}
+              variant="h6"
+            >
+              artistName
+            </WithStyles(Typography)>
+          </div>
+          <div
+            className="Player-controls-5"
+          >
+            <WithStyles(IconButton)
+              aria-label="Previous"
+              color="secondary"
+              onClick={[Function]}
+            >
+              <pure(SkipPreviousIcon) />
+            </WithStyles(IconButton)>
+            <WithStyles(IconButton)
+              aria-label="Play"
+              onClick={[Function]}
+            >
+              <pure(PlayArrowIcon)
+                color="secondary"
+              />
+            </WithStyles(IconButton)>
+            <WithStyles(IconButton)
+              aria-label="Next"
+              color="secondary"
+              onClick={[Function]}
+            >
+              <pure(SkipNextIcon) />
+            </WithStyles(IconButton)>
+          </div>
+        </WithStyles(Toolbar)>,
+        "className": "Player-appBar-1",
+        "color": "primary",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <div
+              className="Player-songInfo-3"
+            >
+              <WithStyles(Typography)
+                className="Player-title-2"
+                color="inherit"
+                name="trackName"
+                noWrap={true}
+                variant="h5"
+              >
+                trackName
+              </WithStyles(Typography)>
+              <WithStyles(Typography)
+                className="Player-title-2"
+                color="secondary"
+                name="artistName"
+                noWrap={true}
+                variant="h6"
+              >
+                artistName
+              </WithStyles(Typography)>
+            </div>,
+            <div
+              className="Player-controls-5"
+            >
+              <WithStyles(IconButton)
+                aria-label="Previous"
+                color="secondary"
+                onClick={[Function]}
+              >
+                <pure(SkipPreviousIcon) />
+              </WithStyles(IconButton)>
+              <WithStyles(IconButton)
+                aria-label="Play"
+                onClick={[Function]}
+              >
+                <pure(PlayArrowIcon)
+                  color="secondary"
+                />
+              </WithStyles(IconButton)>
+              <WithStyles(IconButton)
+                aria-label="Next"
+                color="secondary"
+                onClick={[Function]}
+              >
+                <pure(SkipNextIcon) />
+              </WithStyles(IconButton)>
+            </div>,
+          ],
+          "className": "Player-toolbar-4",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <WithStyles(Typography)
+                  className="Player-title-2"
+                  color="inherit"
+                  name="trackName"
+                  noWrap={true}
+                  variant="h5"
+                >
+                  trackName
+                </WithStyles(Typography)>,
+                <WithStyles(Typography)
+                  className="Player-title-2"
+                  color="secondary"
+                  name="artistName"
+                  noWrap={true}
+                  variant="h6"
+                >
+                  artistName
+                </WithStyles(Typography)>,
+              ],
+              "className": "Player-songInfo-3",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "trackName",
+                  "className": "Player-title-2",
+                  "color": "inherit",
+                  "name": "trackName",
+                  "noWrap": true,
+                  "variant": "h5",
+                },
+                "ref": null,
+                "rendered": "trackName",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "artistName",
+                  "className": "Player-title-2",
+                  "color": "secondary",
+                  "name": "artistName",
+                  "noWrap": true,
+                  "variant": "h6",
+                },
+                "ref": null,
+                "rendered": "artistName",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <WithStyles(IconButton)
+                  aria-label="Previous"
+                  color="secondary"
+                  onClick={[Function]}
+                >
+                  <pure(SkipPreviousIcon) />
+                </WithStyles(IconButton)>,
+                <WithStyles(IconButton)
+                  aria-label="Play"
+                  onClick={[Function]}
+                >
+                  <pure(PlayArrowIcon)
+                    color="secondary"
+                  />
+                </WithStyles(IconButton)>,
+                <WithStyles(IconButton)
+                  aria-label="Next"
+                  color="secondary"
+                  onClick={[Function]}
+                >
+                  <pure(SkipNextIcon) />
+                </WithStyles(IconButton)>,
+              ],
+              "className": "Player-controls-5",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "aria-label": "Previous",
+                  "children": <pure(SkipPreviousIcon) />,
+                  "color": "secondary",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "aria-label": "Play",
+                  "children": <pure(PlayArrowIcon)
+                    color="secondary"
+                  />,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "color": "secondary",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "aria-label": "Next",
+                  "children": <pure(SkipNextIcon) />,
+                  "color": "secondary",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

@@ -71,10 +71,10 @@ class Player extends Component {
       <AppBar color="primary" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div className={classes.songInfo}>
-            <Typography className={classes.title} variant="h5" color="inherit" noWrap>
+            <Typography name="trackName" className={classes.title} variant="h5" color="inherit" noWrap>
               {playerInfo.trackName}
             </Typography>
-            <Typography className={classes.title} variant="h6" color="secondary" noWrap>
+            <Typography name="artistName" className={classes.title} variant="h6" color="secondary" noWrap>
               {playerInfo.artistName}
             </Typography>
           </div>

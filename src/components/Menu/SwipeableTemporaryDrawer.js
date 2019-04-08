@@ -54,6 +54,7 @@ class SwipeableTemporaryDrawer extends React.Component {
                     <ListItemText primary={"Favorites"} />
                   </ListItem>
                 </Link>
+                <Divider />
                 <Link
                   component={RouterLink}
                   onClick={this.clearStorage}
@@ -65,7 +66,6 @@ class SwipeableTemporaryDrawer extends React.Component {
                   </ListItem>
                 </Link>
               </List>
-              <Divider />
             </div>
           </div>
         </SwipeableDrawer>

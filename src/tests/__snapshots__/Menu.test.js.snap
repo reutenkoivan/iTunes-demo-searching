@@ -1,0 +1,836 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Menu
+    classes={
+      Object {
+        "grow": "Menu-grow-2",
+        "inputInput": "Menu-inputInput-8",
+        "inputRoot": "Menu-inputRoot-7",
+        "menuButton": "Menu-menuButton-3",
+        "root": "Menu-root-1",
+        "search": "Menu-search-5",
+        "searchIcon": "Menu-searchIcon-6",
+        "title": "Menu-title-4",
+      }
+    }
+    history={
+      Object {
+        "location": Object {
+          "pathname": "",
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <div
+          className="Menu-root-1"
+        >
+          <WithStyles(AppBar)
+            position="static"
+          >
+            <WithStyles(Toolbar)>
+              <WithStyles(IconButton)
+                aria-label="Open drawer"
+                className="Menu-menuButton-3"
+                color="inherit"
+                onClick={[Function]}
+              >
+                <pure(MenuIcon) />
+              </WithStyles(IconButton)>
+              <WithStyles(Typography)
+                className="Menu-title-4"
+                color="inherit"
+                noWrap={true}
+                variant="h6"
+              >
+                Searching page
+              </WithStyles(Typography)>
+              <div
+                className="Menu-grow-2"
+              />
+              <div
+                className="Menu-search-5"
+              >
+                <div
+                  className="Menu-searchIcon-6"
+                >
+                  <pure(SearchIcon) />
+                </div>
+                <DebounceInput
+                  classes={
+                    Object {
+                      "input": "Menu-inputInput-8",
+                      "root": "Menu-inputRoot-7",
+                    }
+                  }
+                  debounceTimeout={700}
+                  element={[Function]}
+                  forceNotifyByEnter={true}
+                  forceNotifyOnBlur={true}
+                  minLength={2}
+                  onChange={[Function]}
+                  placeholder="Song..."
+                  type="text"
+                />
+              </div>
+            </WithStyles(Toolbar)>
+          </WithStyles(AppBar)>
+        </div>,
+        <Connect(WithStyles(SwipeableTemporaryDrawer))
+          isOpen={false}
+          toggleDrawer={[Function]}
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <WithStyles(AppBar)
+            position="static"
+          >
+            <WithStyles(Toolbar)>
+              <WithStyles(IconButton)
+                aria-label="Open drawer"
+                className="Menu-menuButton-3"
+                color="inherit"
+                onClick={[Function]}
+              >
+                <pure(MenuIcon) />
+              </WithStyles(IconButton)>
+              <WithStyles(Typography)
+                className="Menu-title-4"
+                color="inherit"
+                noWrap={true}
+                variant="h6"
+              >
+                Searching page
+              </WithStyles(Typography)>
+              <div
+                className="Menu-grow-2"
+              />
+              <div
+                className="Menu-search-5"
+              >
+                <div
+                  className="Menu-searchIcon-6"
+                >
+                  <pure(SearchIcon) />
+                </div>
+                <DebounceInput
+                  classes={
+                    Object {
+                      "input": "Menu-inputInput-8",
+                      "root": "Menu-inputRoot-7",
+                    }
+                  }
+                  debounceTimeout={700}
+                  element={[Function]}
+                  forceNotifyByEnter={true}
+                  forceNotifyOnBlur={true}
+                  minLength={2}
+                  onChange={[Function]}
+                  placeholder="Song..."
+                  type="text"
+                />
+              </div>
+            </WithStyles(Toolbar)>
+          </WithStyles(AppBar)>,
+          "className": "Menu-root-1",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <WithStyles(Toolbar)>
+              <WithStyles(IconButton)
+                aria-label="Open drawer"
+                className="Menu-menuButton-3"
+                color="inherit"
+                onClick={[Function]}
+              >
+                <pure(MenuIcon) />
+              </WithStyles(IconButton)>
+              <WithStyles(Typography)
+                className="Menu-title-4"
+                color="inherit"
+                noWrap={true}
+                variant="h6"
+              >
+                Searching page
+              </WithStyles(Typography)>
+              <div
+                className="Menu-grow-2"
+              />
+              <div
+                className="Menu-search-5"
+              >
+                <div
+                  className="Menu-searchIcon-6"
+                >
+                  <pure(SearchIcon) />
+                </div>
+                <DebounceInput
+                  classes={
+                    Object {
+                      "input": "Menu-inputInput-8",
+                      "root": "Menu-inputRoot-7",
+                    }
+                  }
+                  debounceTimeout={700}
+                  element={[Function]}
+                  forceNotifyByEnter={true}
+                  forceNotifyOnBlur={true}
+                  minLength={2}
+                  onChange={[Function]}
+                  placeholder="Song..."
+                  type="text"
+                />
+              </div>
+            </WithStyles(Toolbar)>,
+            "position": "static",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <WithStyles(IconButton)
+                  aria-label="Open drawer"
+                  className="Menu-menuButton-3"
+                  color="inherit"
+                  onClick={[Function]}
+                >
+                  <pure(MenuIcon) />
+                </WithStyles(IconButton)>,
+                <WithStyles(Typography)
+                  className="Menu-title-4"
+                  color="inherit"
+                  noWrap={true}
+                  variant="h6"
+                >
+                  Searching page
+                </WithStyles(Typography)>,
+                <div
+                  className="Menu-grow-2"
+                />,
+                <div
+                  className="Menu-search-5"
+                >
+                  <div
+                    className="Menu-searchIcon-6"
+                  >
+                    <pure(SearchIcon) />
+                  </div>
+                  <DebounceInput
+                    classes={
+                      Object {
+                        "input": "Menu-inputInput-8",
+                        "root": "Menu-inputRoot-7",
+                      }
+                    }
+                    debounceTimeout={700}
+                    element={[Function]}
+                    forceNotifyByEnter={true}
+                    forceNotifyOnBlur={true}
+                    minLength={2}
+                    onChange={[Function]}
+                    placeholder="Song..."
+                    type="text"
+                  />
+                </div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "aria-label": "Open drawer",
+                  "children": <pure(MenuIcon) />,
+                  "className": "Menu-menuButton-3",
+                  "color": "inherit",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Searching page",
+                  "className": "Menu-title-4",
+                  "color": "inherit",
+                  "noWrap": true,
+                  "variant": "h6",
+                },
+                "ref": null,
+                "rendered": "Searching page",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "Menu-grow-2",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="Menu-searchIcon-6"
+                    >
+                      <pure(SearchIcon) />
+                    </div>,
+                    <DebounceInput
+                      classes={
+                        Object {
+                          "input": "Menu-inputInput-8",
+                          "root": "Menu-inputRoot-7",
+                        }
+                      }
+                      debounceTimeout={700}
+                      element={[Function]}
+                      forceNotifyByEnter={true}
+                      forceNotifyOnBlur={true}
+                      minLength={2}
+                      onChange={[Function]}
+                      placeholder="Song..."
+                      type="text"
+                    />,
+                  ],
+                  "className": "Menu-search-5",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <pure(SearchIcon) />,
+                      "className": "Menu-searchIcon-6",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "classes": Object {
+                        "input": "Menu-inputInput-8",
+                        "root": "Menu-inputRoot-7",
+                      },
+                      "debounceTimeout": 700,
+                      "element": [Function],
+                      "forceNotifyByEnter": true,
+                      "forceNotifyOnBlur": true,
+                      "inputRef": undefined,
+                      "minLength": 2,
+                      "onBlur": undefined,
+                      "onChange": [Function],
+                      "onKeyDown": undefined,
+                      "placeholder": "Song...",
+                      "type": "text",
+                      "value": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "isOpen": false,
+          "toggleDrawer": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <div
+            className="Menu-root-1"
+          >
+            <WithStyles(AppBar)
+              position="static"
+            >
+              <WithStyles(Toolbar)>
+                <WithStyles(IconButton)
+                  aria-label="Open drawer"
+                  className="Menu-menuButton-3"
+                  color="inherit"
+                  onClick={[Function]}
+                >
+                  <pure(MenuIcon) />
+                </WithStyles(IconButton)>
+                <WithStyles(Typography)
+                  className="Menu-title-4"
+                  color="inherit"
+                  noWrap={true}
+                  variant="h6"
+                >
+                  Searching page
+                </WithStyles(Typography)>
+                <div
+                  className="Menu-grow-2"
+                />
+                <div
+                  className="Menu-search-5"
+                >
+                  <div
+                    className="Menu-searchIcon-6"
+                  >
+                    <pure(SearchIcon) />
+                  </div>
+                  <DebounceInput
+                    classes={
+                      Object {
+                        "input": "Menu-inputInput-8",
+                        "root": "Menu-inputRoot-7",
+                      }
+                    }
+                    debounceTimeout={700}
+                    element={[Function]}
+                    forceNotifyByEnter={true}
+                    forceNotifyOnBlur={true}
+                    minLength={2}
+                    onChange={[Function]}
+                    placeholder="Song..."
+                    type="text"
+                  />
+                </div>
+              </WithStyles(Toolbar)>
+            </WithStyles(AppBar)>
+          </div>,
+          <Connect(WithStyles(SwipeableTemporaryDrawer))
+            isOpen={false}
+            toggleDrawer={[Function]}
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <WithStyles(AppBar)
+              position="static"
+            >
+              <WithStyles(Toolbar)>
+                <WithStyles(IconButton)
+                  aria-label="Open drawer"
+                  className="Menu-menuButton-3"
+                  color="inherit"
+                  onClick={[Function]}
+                >
+                  <pure(MenuIcon) />
+                </WithStyles(IconButton)>
+                <WithStyles(Typography)
+                  className="Menu-title-4"
+                  color="inherit"
+                  noWrap={true}
+                  variant="h6"
+                >
+                  Searching page
+                </WithStyles(Typography)>
+                <div
+                  className="Menu-grow-2"
+                />
+                <div
+                  className="Menu-search-5"
+                >
+                  <div
+                    className="Menu-searchIcon-6"
+                  >
+                    <pure(SearchIcon) />
+                  </div>
+                  <DebounceInput
+                    classes={
+                      Object {
+                        "input": "Menu-inputInput-8",
+                        "root": "Menu-inputRoot-7",
+                      }
+                    }
+                    debounceTimeout={700}
+                    element={[Function]}
+                    forceNotifyByEnter={true}
+                    forceNotifyOnBlur={true}
+                    minLength={2}
+                    onChange={[Function]}
+                    placeholder="Song..."
+                    type="text"
+                  />
+                </div>
+              </WithStyles(Toolbar)>
+            </WithStyles(AppBar)>,
+            "className": "Menu-root-1",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <WithStyles(Toolbar)>
+                <WithStyles(IconButton)
+                  aria-label="Open drawer"
+                  className="Menu-menuButton-3"
+                  color="inherit"
+                  onClick={[Function]}
+                >
+                  <pure(MenuIcon) />
+                </WithStyles(IconButton)>
+                <WithStyles(Typography)
+                  className="Menu-title-4"
+                  color="inherit"
+                  noWrap={true}
+                  variant="h6"
+                >
+                  Searching page
+                </WithStyles(Typography)>
+                <div
+                  className="Menu-grow-2"
+                />
+                <div
+                  className="Menu-search-5"
+                >
+                  <div
+                    className="Menu-searchIcon-6"
+                  >
+                    <pure(SearchIcon) />
+                  </div>
+                  <DebounceInput
+                    classes={
+                      Object {
+                        "input": "Menu-inputInput-8",
+                        "root": "Menu-inputRoot-7",
+                      }
+                    }
+                    debounceTimeout={700}
+                    element={[Function]}
+                    forceNotifyByEnter={true}
+                    forceNotifyOnBlur={true}
+                    minLength={2}
+                    onChange={[Function]}
+                    placeholder="Song..."
+                    type="text"
+                  />
+                </div>
+              </WithStyles(Toolbar)>,
+              "position": "static",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <WithStyles(IconButton)
+                    aria-label="Open drawer"
+                    className="Menu-menuButton-3"
+                    color="inherit"
+                    onClick={[Function]}
+                  >
+                    <pure(MenuIcon) />
+                  </WithStyles(IconButton)>,
+                  <WithStyles(Typography)
+                    className="Menu-title-4"
+                    color="inherit"
+                    noWrap={true}
+                    variant="h6"
+                  >
+                    Searching page
+                  </WithStyles(Typography)>,
+                  <div
+                    className="Menu-grow-2"
+                  />,
+                  <div
+                    className="Menu-search-5"
+                  >
+                    <div
+                      className="Menu-searchIcon-6"
+                    >
+                      <pure(SearchIcon) />
+                    </div>
+                    <DebounceInput
+                      classes={
+                        Object {
+                          "input": "Menu-inputInput-8",
+                          "root": "Menu-inputRoot-7",
+                        }
+                      }
+                      debounceTimeout={700}
+                      element={[Function]}
+                      forceNotifyByEnter={true}
+                      forceNotifyOnBlur={true}
+                      minLength={2}
+                      onChange={[Function]}
+                      placeholder="Song..."
+                      type="text"
+                    />
+                  </div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "aria-label": "Open drawer",
+                    "children": <pure(MenuIcon) />,
+                    "className": "Menu-menuButton-3",
+                    "color": "inherit",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Searching page",
+                    "className": "Menu-title-4",
+                    "color": "inherit",
+                    "noWrap": true,
+                    "variant": "h6",
+                  },
+                  "ref": null,
+                  "rendered": "Searching page",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "Menu-grow-2",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="Menu-searchIcon-6"
+                      >
+                        <pure(SearchIcon) />
+                      </div>,
+                      <DebounceInput
+                        classes={
+                          Object {
+                            "input": "Menu-inputInput-8",
+                            "root": "Menu-inputRoot-7",
+                          }
+                        }
+                        debounceTimeout={700}
+                        element={[Function]}
+                        forceNotifyByEnter={true}
+                        forceNotifyOnBlur={true}
+                        minLength={2}
+                        onChange={[Function]}
+                        placeholder="Song..."
+                        type="text"
+                      />,
+                    ],
+                    "className": "Menu-search-5",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <pure(SearchIcon) />,
+                        "className": "Menu-searchIcon-6",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {},
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "classes": Object {
+                          "input": "Menu-inputInput-8",
+                          "root": "Menu-inputRoot-7",
+                        },
+                        "debounceTimeout": 700,
+                        "element": [Function],
+                        "forceNotifyByEnter": true,
+                        "forceNotifyOnBlur": true,
+                        "inputRef": undefined,
+                        "minLength": 2,
+                        "onBlur": undefined,
+                        "onChange": [Function],
+                        "onKeyDown": undefined,
+                        "placeholder": "Song...",
+                        "type": "text",
+                        "value": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "isOpen": false,
+            "toggleDrawer": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "context": Object {},
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
