@@ -91,7 +91,7 @@ class Menu extends Component {
 
   render() {
     const { classes } = this.props;
-    const typeOfPage = this.props.history.location.pathname.substring(1);
+    const typeOfPage = this.props.rootPath === this.props.history.location.pathname;
     return (
       <React.Fragment>
         <div className={classes.root}>
@@ -101,10 +101,10 @@ class Menu extends Component {
                 <MenuIcon />
               </IconButton>
               <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                {typeOfPage === "" ? "Searching page" : "Favorite songs"}
+                {typeOfPage ? "Searching page" : "Favorite songs"}
               </Typography>
               <div className={classes.grow} />
-              {typeOfPage === ""
+              {typeOfPage
                 ? <div className={classes.search}>
                   <div className={classes.searchIcon}>
                     <SearchIcon />

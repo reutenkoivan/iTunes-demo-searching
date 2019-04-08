@@ -35,9 +35,15 @@ const styles = (theme) => ({
 });
 
 class Player extends Component {
+  componentDidMount() {
+    const rootPath = this.props.history.location.pathname.split("/").slice(0,2).join("/").trim();
+    this.props.addRootPath(rootPath);
+    if(this.props.history.location.pathname.length === rootPath.length)
+      this.props.history.push(`${rootPath}/`)
+  };
 
   switchSoundState = () => {
-    const typeOfPage = this.props.history.location.pathname.substring(1);
+    const typeOfPage = this.props.history.location.pathname.split(/\//g).reverse()[0];
     const {favorites, songs} = this.props.track;
     const {favoritesSongs, searchingSongs, playerInfo} = this.props;
 

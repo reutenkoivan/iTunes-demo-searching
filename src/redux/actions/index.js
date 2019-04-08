@@ -28,3 +28,8 @@ export const addToFavoriteError = error => ({
   error,
   type: "FETCH_SONGS_ERROR"
 });
+
+export const rootPath = path => ({
+  path,
+  type: "ADD_ROOT_PATH"
+});

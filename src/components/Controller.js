@@ -20,7 +20,7 @@ class Controller extends Component {
       this.audio = new Audio(trackLink);
       this.audio.onended = () => {this.props.addSongToPlayer(playlist[next], playlist)};
       this.audio.onloadeddata = () => this.audio.play()
-    } else {
+    } else if(this.audio !== undefined){
       isPlaying ? this.playSong() : this.pause();
     }
   };
@@ -37,12 +37,13 @@ class Controller extends Component {
   pause = () => this.audio.pause();
 
   render(){
+    const {rootPath} = this.props;
     return (
       <Router>
-        <Route path="/" component={Menu} /><br/>
-        <Route exact path="/" component={SearchingPage} />
-        <Route exact path="/favorites" component={Favorites} /><br/><br/><br/>
-        <Route path="/" component={Player} />
+        <Route path={rootPath} component={Menu} /><br/>
+        <Route exact path={rootPath} component={SearchingPage} />
+        <Route exact path={rootPath+"favorites"} component={Favorites} /><br/><br/><br/>
+        <Route path={rootPath} component={Player} />
       </Router>
     );
   }
