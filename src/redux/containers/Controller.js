@@ -4,8 +4,7 @@ import fetchSongs from "../actionCreators/fetchSongs";
 import { addSongSuccess } from "../actions";
 
 const mapStateToProps = state => ({
-  playerInfo: state.playerInfo,
-  rootPath: state.rootPath
+  playerInfo: state.playerInfo
 });
 
 const mapDispatchToProps = dispatch => ({

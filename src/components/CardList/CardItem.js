@@ -52,14 +52,15 @@ class CardItem extends Component {
     this.props.addSongToPlayer(this.props.song, playlist);
   };
 
-  componentDidMount() {
-    if(this.props.favorites.some(song => song.trackId === this.props.song.trackId))
-      this.setState({favoriteButtonColor: "error"})
-  }
+  static getDerivedStateFromProps(props, state){
 
-  componentDidUpdate(prevProps, prevState) {
-    if(!this.props.favorites.length && prevState.favoriteButtonColor === "error")
-      this.setState({favoriteButtonColor: "primary"});
+    if(props.favorites.some(song => song.trackId === props.song.trackId))
+      return {favoriteButtonColor: "error"};
+
+    if(!props.favorites.length && state.favoriteButtonColor === "error")
+      return {favoriteButtonColor: "primary"};
+
+    return null
   }
 
   switchFavoriteState = () => {
@@ -73,7 +74,6 @@ class CardItem extends Component {
 
   render() {
     const { classes, song, playerInfo } = this.props;
-
     return (
       <Grid item xs={12}>
         <Card className={classes.card}>

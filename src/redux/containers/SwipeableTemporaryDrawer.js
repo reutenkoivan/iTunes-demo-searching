@@ -3,8 +3,7 @@ import SwipeableTemporaryDrawer from "../../components/Menu/SwipeableTemporaryDr
 import addToLocalStorage from "../actionCreators/addToLocalStorage";
 
 const mapStateToProps = state => ({
-  favorites: state.favorites,
-  rootPath: state.rootPath
+  favorites: state.favorites
 });
 
 

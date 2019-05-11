@@ -37,13 +37,12 @@ class Controller extends Component {
   pause = () => this.audio.pause();
 
   render(){
-    const {rootPath} = this.props;
     return (
       <Router>
-        <Route path={rootPath} component={Menu} /><br/>
-        <Route exact path={rootPath} component={SearchingPage} />
-        <Route exact path={rootPath+"favorites"} component={Favorites} /><br/><br/><br/>
-        <Route path={rootPath} component={Player} />
+        <Route path={"/"} component={Menu} /><br/>
+        <Route exact path={"/"} component={SearchingPage} />
+        <Route exact path={"/favorites"} component={Favorites} /><br/><br/><br/>
+        <Route path={"/"} component={Player} />
       </Router>
     );
   }

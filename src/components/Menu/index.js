@@ -91,7 +91,7 @@ class Menu extends Component {
 
   render() {
     const { classes } = this.props;
-    const typeOfPage = this.props.rootPath === this.props.history.location.pathname;
+    const typeOfPage = this.props.history.location.pathname === "/";
     return (
       <React.Fragment>
         <div className={classes.root}>

@@ -35,13 +35,6 @@ const styles = (theme) => ({
 });
 
 class Player extends Component {
-  componentDidMount() {
-    const rootPath = this.props.history.location.pathname.split("/").slice(0,2).join("/").trim();
-    this.props.addRootPath(rootPath.length - 1 ? rootPath : "");
-
-    if(this.props.history.location.pathname.length === rootPath.length && rootPath.length-1)
-      this.props.history.push(`${rootPath}/`)
-  };
 
   switchSoundState = () => {
     const typeOfPage = this.props.history.location.pathname.split(/\//g).reverse()[0];
@@ -89,18 +82,20 @@ class Player extends Component {
             <IconButton onClick={this.playPrevious} color="secondary" aria-label="Previous">
               <SkipPreviousIcon />
             </IconButton>
-            <IconButton
-              onClick={this.switchSoundState}
-              aria-label={playerInfo.isPlaying
-                ? "Pause"
-                : "Play"
-              }
-            >
-              {playerInfo.isPlaying
-                ? <Pause color="secondary"/>
-                : <PlayArrowIcon color="secondary"/>
-              }
-            </IconButton>
+            { playerInfo.isPlaying
+              ? <IconButton
+                onClick={this.switchSoundState}
+                aria-label="Pause"
+              >
+                <Pause color="secondary"/>
+              </IconButton>
+
+              : <IconButton
+                onClick={this.switchSoundState}
+                aria-label="Play">
+                <PlayArrowIcon color="secondary"/>
+              </IconButton>
+            }
             <IconButton onClick={this.playNext} color="secondary" aria-label="Next">
               <SkipNextIcon />
             </IconButton>
