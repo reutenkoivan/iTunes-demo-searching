@@ -8,9 +8,9 @@ import PropTypes from "prop-types";
 
 class Controller extends Component {
   componentDidMount(){
-    const ids = localStorage.getItem("iTunesApp");
-    if(typeof ids === "string" && ids)
-      ids.split(" ").forEach(id => this.props.getSongs(null, id));
+    const ids = JSON.parse(localStorage.getItem("iTunesApp"));
+    if(Array.isArray(ids))
+      ids.forEach(id => this.props.getSongs(null, id));
   };
 
   componentDidUpdate(prevProps) {
