@@ -1,13 +1,13 @@
 {
   "main.css": "/iTunes-demo-searching/static/css/main.df9c16db.chunk.css",
-  "main.js": "/iTunes-demo-searching/static/js/main.32f23378.chunk.js",
-  "main.js.map": "/iTunes-demo-searching/static/js/main.32f23378.chunk.js.map",
+  "main.js": "/iTunes-demo-searching/static/js/main.5b3c2884.chunk.js",
+  "main.js.map": "/iTunes-demo-searching/static/js/main.5b3c2884.chunk.js.map",
   "runtime~main.js": "/iTunes-demo-searching/static/js/runtime~main.e7c1b644.js",
   "runtime~main.js.map": "/iTunes-demo-searching/static/js/runtime~main.e7c1b644.js.map",
-  "static/js/2.5f7a561e.chunk.js": "/iTunes-demo-searching/static/js/2.5f7a561e.chunk.js",
-  "static/js/2.5f7a561e.chunk.js.map": "/iTunes-demo-searching/static/js/2.5f7a561e.chunk.js.map",
+  "static/js/2.287fafcb.chunk.js": "/iTunes-demo-searching/static/js/2.287fafcb.chunk.js",
+  "static/js/2.287fafcb.chunk.js.map": "/iTunes-demo-searching/static/js/2.287fafcb.chunk.js.map",
   "index.html": "/iTunes-demo-searching/index.html",
-  "precache-manifest.7647b696ee6b234ee2e0df9942308503.js": "/iTunes-demo-searching/precache-manifest.7647b696ee6b234ee2e0df9942308503.js",
+  "precache-manifest.b4b460374eb9feac289a21ee8a287bfb.js": "/iTunes-demo-searching/precache-manifest.b4b460374eb9feac289a21ee8a287bfb.js",
   "service-worker.js": "/iTunes-demo-searching/service-worker.js",
   "static/css/main.df9c16db.chunk.css.map": "/iTunes-demo-searching/static/css/main.df9c16db.chunk.css.map"
 }
